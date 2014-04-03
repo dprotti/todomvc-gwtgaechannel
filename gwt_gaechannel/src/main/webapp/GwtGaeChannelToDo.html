@@ -1,0 +1,46 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <!--                                                               -->
+    <!-- Consider inlining CSS to reduce the number of requested files -->
+    <!--                                                               -->
+    <link type="text/css" rel="stylesheet" href="bower_components/todomvc-common/base.css">
+    <link type="text/css" rel="stylesheet" href="css/app.css">
+
+    <title>TodoMVC • GWT + GAE Channels</title>
+
+    <!--                                                               -->
+    <!-- This script allows use of GAE Channels from the browser       -->
+    <!-- It must come before the GWT compiled module                   -->
+    <!--                                                               -->
+    <script type="text/javascript" src="/_ah/channel/jsapi"></script>
+
+    <!--                                           -->
+    <!-- This script loads your compiled module.   -->
+    <!-- If you add any GWT meta tags, they must   -->
+    <!-- be added before this line.                -->
+    <!--                                           -->
+    <script type="text/javascript" language="javascript" src="gwtgaechanneltodo/gwtgaechanneltodo.nocache.js"></script>
+  </head>
+
+  <body>
+
+    <!-- GWT history support -->
+    <iframe src="javascript:''" id="__gwt_historyFrame" tabIndex='-1' style="position:absolute;width:0;height:0;border:0"></iframe>
+    
+    <noscript>
+      <div style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif">
+        Your web browser must have JavaScript enabled
+        in order for this application to display correctly.
+      </div>
+    </noscript>
+
+    <script type="text/javascript" src="bower_components/todomvc-common/base.js"></script>
+
+    <div id="mainContainer"></div>
+
+  </body>
+</html>

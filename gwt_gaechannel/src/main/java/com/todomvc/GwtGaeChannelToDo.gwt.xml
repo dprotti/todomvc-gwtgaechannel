@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='gwtgaechanneltodo'>
+  <!-- Inherit some Web Toolkit stuff.                            -->
+  <inherits name='com.google.gwt.user.User'/>
+  <inherits name="com.google.gwt.json.JSON" />
+  <!-- Place provides DefaultHistorian -->
+  <inherits name='com.google.gwt.place.Place'/>
+
+  <!-- Do not inherit any GWT style sheet                         -->
+  <!-- We use our custom style                                    -->
+  <!-- <inherits name='com.google.gwt.user.theme.clean.Clean'/>   -->
+  <!-- <inherits name='com.google.gwt.user.theme.standard.Standard'/> -->
+  <!-- <inherits name='com.google.gwt.user.theme.chrome.Chrome'/> -->
+  <!-- <inherits name='com.google.gwt.user.theme.dark.Dark'/>     -->
+
+  <!-- Inherit GIN dependency injection                           -->
+  <inherits name="com.google.gwt.inject.Inject"/>
+  <!-- Inherit GAE channels                                       -->
+  <inherits name='com.google.gwt.appengine.channel.Channel'/>
+  <!-- Inherit Guava for GWT                                      -->
+  <inherits name='com.google.common.collect.Collect' />
+
+  <!-- Specify the app entry point class.                         -->
+  <entry-point class='com.todomvc.client.GwtGaeChannelToDo'/>
+
+  <!-- Specify the paths for translatable code                    -->
+  <source path='client'/>
+  <source path='shared'/>
+
+</module>

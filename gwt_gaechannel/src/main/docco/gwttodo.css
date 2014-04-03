@@ -1,0 +1,71 @@
+
+#main-title {
+  padding: 20px 10px;
+}
+
+.warning {
+  color: red;
+  font-size: medium;
+}
+
+#docco-index {
+  width: 80%;
+}
+
+#docco-index, #docco-index p {
+  font-size: medium;
+  font-family: "Varela Round", sans-serif;
+  padding: 10px;
+  text-align: justify;
+}
+
+.nav-header {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.source-file-link {
+  margin-left: 10px;
+}
+
+.source-filename {
+  margin: 0px 20px;
+  font-size: medium;
+}
+
+#screenshot {
+  display: block;
+  margin: 20px auto;
+}
+
+.exercise {
+  margin-top: 20px;
+  border: 2px grey solid;
+  border-radius: 2px;
+  padding: 15px;
+  padding-top: 5px;
+}
+
+@media screen and (max-width: 1080px) {
+  #screenshot {
+    width: 647px;
+    height: 380px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #docco-index {
+    width: 95%;
+  }
+  #screenshot {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #docco-index, #docco-index p {
+    text-align: left;
+  }
+}
+

@@ -1,0 +1,329 @@
+/**
+ * Custom Closure template. Based on atlassian-docco-h.soy:
+ * https://bitbucket.org/doklovic_atlassian/atlassian-docco/src/master/atlassian-docco/src/main/resources/template/atlassian-docco-h.soy
+ */
+{namespace atlassian.docco}
+
+/**
+* HTML Header
+* @param title the title of the page
+* @param basePath the root of the docs
+*/
+{template .headCommon}
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>{$title}</title>
+  <link href="{$basePath}/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+  <link href="{$basePath}/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+  <link href="{$basePath}/css/atlassian-docco.css" rel="stylesheet" type="text/css"/>
+  <link href="{$basePath}/gwttodo.css" rel="stylesheet" type="text/css"/>
+{/template}
+
+/**
+* HTML Page Header
+* @param title the title of the page
+* @param basePath the root of the docs
+*/
+{template .headPage}
+    {call .headCommon}
+      {param title: $title /}
+      {param basePath: $basePath /}
+    {/call}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="alternate stylesheet" class="codebrush light" title="IDEA" href="http://yandex.st/highlightjs/6.2/styles/idea.min.css"/>
+    <link rel="alternate stylesheet" class="codebrush light" title="Google Code" href="http://yandex.st/highlightjs/6.2/styles/googlecode.min.css"/>
+    <link rel="alternate stylesheet" class="codebrush light" title="GitHub" href="http://yandex.st/highlightjs/6.2/styles/github.min.css"/>
+    <link rel="alternate stylesheet" class="codebrush light" title="Visual Studio" href="http://yandex.st/highlightjs/6.2/styles/vs.min.css"/>
+    <link rel="alternate stylesheet" class="codebrush light" title="Magula" href="http://yandex.st/highlightjs/6.2/styles/magula.min.css"/>
+
+    <link rel="stylesheet" class="codebrush dark" title="Zenburn" href="http://yandex.st/highlightjs/6.2/styles/zenburn.min.css"/>
+    <link rel="alternate stylesheet" class="codebrush dark" title="Arta" href="http://yandex.st/highlightjs/6.2/styles/arta.min.css"/>
+    <link rel="alternate stylesheet" class="codebrush dark" title="Monokai" href="http://yandex.st/highlightjs/6.2/styles/monokai.min.css"/>
+    <link rel="alternate stylesheet" class="codebrush dark" title="IR Black" href="http://yandex.st/highlightjs/6.2/styles/ir_black.min.css"/>
+    <link rel="alternate stylesheet" class="codebrush dark" title="Solarized Dark" href="http://yandex.st/highlightjs/6.2/styles/solarized_dark.min.css"/>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="http://yandex.st/highlightjs/6.2/highlight.min.js"></script>
+
+    <script type="text/javascript" src="{$basePath}/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="{$basePath}/js/bootstrap.min.js"></script>
+    <!-- Use our own attlassian-docco.js file to set Zenburn as default theme -->
+    <script type="text/javascript" src="{$basePath}/gwttodo-atlassian-docco.js"></script>
+{/template}
+
+/**
+ * Brief intro
+ */
+{template .story}
+  <div class="story">
+    <p>
+    <a href="http://www.youtube.com/watch?v=wWhd9ZwvCyw&t=29m44s" alt="Justin's presentation video">Justin Fagnani presented in Google I/O 2011</a>
+    (in 10 minutes) a conceptual overview of how his team builds collaborative apps at Google using GWT.
+    His explanation is brilliant, but implementing such a scheme based only on the presentation would be a challenge, and to my knowledge there are no publicly
+    available sample implementations.
+    </p>
+    <p>
+    What comes next is a <a href="http://todomvc.com">TodoMVC</a> app which supports collaborative editing.
+    When a user adds, modifies or removes a task, the change is reflected in real-time in all other browsers.
+    It's implemented using <a href="http://www.gwtproject.org/">GWT</a>,
+    App Engine <a href="https://developers.google.com/appengine/docs/java/channel/">Channel API</a> and
+    the <a href="http://en.wikipedia.org/wiki/Command_pattern">Command Pattern</a>.
+    Understanding the code requires that you listened to the aforementioned 10
+    minutes <a href="http://www.youtube.com/watch?v=wWhd9ZwvCyw&t=29m44s">presentation</a>.
+    </p>
+    <p>
+    <img id="screenshot" src="in-action.png" title="Tasks being edited in 2 browsers" alt="gwttodomvc screen capture" border="0"/>
+    </p>
+  </div>
+{/template}
+
+/*! the main template */
+
+/**
+* Single Page Template
+* @param basePath the root of the docs
+* @param title the title of the page
+* @param nameWithoutExtension the name of the source file minus the extension
+* @param syntax the language
+* @param header the header
+* @param sections the sections to process
+*/
+{template .singlePage}
+/* just using this here so soy doesn't complain */
+{if $nameWithoutExtension }
+{/if}
+
+<!DOCTYPE html>
+<html>
+    <head>
+    {call .headPage}
+      {param title: $title /}
+      {param basePath: $basePath /}
+    {/call}
+    </head>
+<body>
+    <div class="container-fluid docco-container">
+    {if $header }
+        <div class="row-fluid">
+            <div class="span12">{$header}</div>
+        </div>
+    {/if}
+
+        {foreach $section in $sections}
+            {call .section}
+              {param section: $section /}
+              {param index: index($section) /}
+              {param syntax: $syntax /}
+            {/call}
+        {/foreach}
+    </div>
+</body>
+</html>
+{/template}
+
+/**
+* Batch Page Template
+* @param basePath the root of the docs
+* @param myPath
+* @param nameWithoutExtension the name of the source file minus the extension
+* @param syntax the language
+* @param header the header
+* @param title the title of the page
+* @param sections the sections to process
+* @param groups
+*/
+{template .batchPage}
+{if $nameWithoutExtension }
+{/if}
+<!DOCTYPE html>
+<html>
+    <head>
+    {call .headPage}
+      {param title: $title /}
+      {param basePath: $basePath /}
+    {/call}
+    </head>
+<body>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <div class="brand"><a href={$basePath}/index.html>GWT+GAE TodoMVC</a><span class="source-filename">{$title}</span></div>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Index <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                              {foreach $group in $groups}
+                                  {call .indexGroup}
+                                    {param group: $group /}
+                                    {param basePath: $basePath /}
+                                    {param currentFile: $title /}
+                                  {/call}
+                              {/foreach}
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Theme <b class="caret"></b></a>
+                            <ul id="themeDropdown" class="dropdown-menu">
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Layout <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li class="active"><a href="#">Horizontal</a></li>
+                                <li><a href="{$basePath}/../vertical/{$myPath}">Vertical</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid docco-container">
+    {if $header }
+        <div class="row-fluid">
+            <div class="span12">{$header}</div>
+        </div>
+    {/if}
+
+        {foreach $section in $sections}
+            {if $section.code }
+                {call .section}
+                  {param section: $section /}
+                  {param index: index($section) /}
+                  {param syntax: $syntax /}
+                {/call}
+            {else}
+                {call .sectionDocOnly}
+                  {param section: $section /}
+                  {param index: index($section) /}
+                {/call}
+            {/if}
+        {/foreach}
+    </div>
+    <div id="grabber"></div>
+</body>
+</html>
+{/template}
+
+/**
+* @param section
+* @param index
+* @param syntax the language
+*/
+{template .section}
+<div id="section-{$index}" class="row-fluid docco-section">
+    <div class="span6 doc">
+        <span class="label label-info"><a style="color:white" href="#section-{$index}">{$index}</a></span>
+        {if $section.doc and not $section.hidden}
+            <div class="doctext">
+            {$section.doc}
+            </div>
+        {else}
+            <div class="doctext hidden-doc">
+            {$section.doc}
+            </div>
+        {/if}
+    </div>
+    <div class="span6 code">
+    {if $section.doc and not $section.hidden}
+        <pre><code class="{$syntax}">{$section.code}</code></pre>
+    {else}
+    <div class="hidden-code-line">
+        ------------------
+        <a href="javascript:void(0)" class="hidden-code-toggle" index="{$index}">Show {if $section.title}{$section.title} {/if}Code (<span class="linecount"></span> lines)</a>
+        ------------------
+    </div>
+    <pre class="hidden-code"><code class="{$syntax}">{$section.code}</code></pre>
+    {/if}
+    </div>
+</div>
+{/template}
+
+/**
+* @param section
+* @param index
+*/
+{template .sectionDocOnly}
+<div id="section-{$index}" class="docco-section">
+    <div class="doc">
+        <span class="label label-info"><a style="color:white" href="#section-{$index}">{$index}</a></span>
+        {if $section.doc}
+            <div class="doctext">
+            {$section.doc}
+            </div>
+        {/if}
+    </div>
+</div>
+{/template}
+
+/**
+* Index Page Template
+* @param basePath the root of the docs
+* @param title the title of the page
+* @param groups the groups for the index nav
+*/
+{template .indexPage}
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta name="google" value="notranslate">
+      {call .headCommon}
+        {param title: $title /}
+        {param basePath: $basePath /}
+      {/call}
+</head>
+<body>
+<div id="docco-index">
+  <h1 id="main-title">{$title} <span class="warning">[Sample Only]</span></h1>
+  {call .story /}
+  <h2>Annotated Sources</h2>
+  <p>
+    Read in literate programming style the source code of the demo.<br>
+    Suggested starting point: <a href="java/com/todomvc/client/ToDoPresenter.java.html">ToDoPresenter.java</a>.
+  </p>
+  <ul>
+  {foreach $group in $groups}
+      {call .indexGroup}
+        {param group: $group /}
+        {param basePath: $basePath /}
+      {/call}
+  {/foreach}
+  </ul>
+</div>
+</body>
+</html>
+{/template}
+
+/**
+* @param group
+* @param basePath the root of the docs
+*/
+{template .indexGroup}
+<div class="nav-header">{$group.name}</div>
+<nav>
+  {foreach $file in $group.files}
+      {call .indexFile}
+        {param file: $file /}
+        {param basePath: $basePath /}
+      {/call}
+  {/foreach}
+</nav>
+{/template}
+
+/**
+* @param file
+* @param basePath the root of the docs
+*/
+{template .indexFile}
+    <div class="source-file-link"><a href="{$basePath}{$file.dir}/{$file.file}.html">{$file.file}</a></div>
+{/template}

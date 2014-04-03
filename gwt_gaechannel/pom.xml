@@ -1,0 +1,266 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.todomvc</groupId>
+		<artifactId>parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>gwtgaechanneltodo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<name>TodoMVC :: GWT + GAE Channels implementation</name>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<!-- Used to retrieve the Docco plugin -->
+			<id>atlassian-public</id>
+			<url>https://maven.atlassian.com/content/groups/public/</url>
+			<releases>
+				<checksumPolicy>fail</checksumPolicy>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<checksumPolicy>fail</checksumPolicy>
+			</snapshots>
+		</pluginRepository>
+
+		<pluginRepository>
+			<id>google-staging</id>
+			<name>Google Staging</name>
+			<url>https://oss.sonatype.org/content/repositories/comgoogleappengine-1004/</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.8.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>16.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava-gwt</artifactId>
+			<version>16.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.inject</groupId>
+			<artifactId>guice</artifactId>
+			<version>3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.inject.extensions</groupId>
+			<artifactId>guice-servlet</artifactId>
+			<version>3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.inject.extensions</groupId>
+			<artifactId>guice-assistedinject</artifactId>
+			<version>3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.gwt.inject</groupId>
+			<artifactId>gin</artifactId>
+			<version>2.1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>aopalliance</groupId>
+			<!-- Required internally by Gin, for example its @MethodInterceptor -->
+			<artifactId>aopalliance</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<!-- JSR 330 @Inject, @Singleton and friends -->
+			<artifactId>javax.inject</artifactId>
+			<version>1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-servlet</artifactId>
+			<version>2.6.0</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-user</artifactId>
+			<version>2.6.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>net.sourceforge.findbugs</groupId>
+			<!-- JSR 305 @Nullable and such -->
+			<artifactId>jsr305</artifactId>
+			<version>1.3.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.appengine</groupId>
+			<artifactId>appengine-api-1.0-sdk</artifactId>
+			<version>1.7.7</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.appengine</groupId>
+			<artifactId>appengine-api-labs</artifactId>
+			<version>1.7.7</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.appengine</groupId>
+			<!-- JSR 107 Java Temporary Caching -->
+			<artifactId>appengine-jsr107cache</artifactId>
+			<version>1.7.7</version>
+		</dependency>
+
+		<!-- Not the best approach. Please read http://stackoverflow.com/questions/364114/can-i-add-jars-to-maven-2-build-classpath-without-installing-them/ -->
+		<dependency>
+			<groupId>com.google.gwt.appengine</groupId>
+			<artifactId>gwt-gae-channel</artifactId>
+			<version>2.0.0</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/lib/gwt-gae-channel-2.0.0.jar</systemPath>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>
+		<plugins>
+			<plugin>
+				<groupId>com.atlassian.docco</groupId>
+				<artifactId>atlassian-docco-maven</artifactId>
+				<version>1.0-beta4</version>
+				<configuration>
+					<!--skipNoDocco>true</skipNoDocco -->
+					<indexTitle>TodoMVC :: GWT + GAE Channels</indexTitle>
+					<sourceDirectory>${basedir}/src/main</sourceDirectory>
+					<outputDirectory>${basedir}/docco</outputDirectory>
+					<excludes>
+						<exclude>docco/**</exclude>
+					</excludes>
+					<horizontalTemplate>${basedir}/src/main/docco/docco-h.soy</horizontalTemplate>
+					<customResources>
+						<customResource>${basedir}/src/main/docco/gwttodo.css</customResource>
+						<customResource>${basedir}/src/main/docco/gwttodo-atlassian-docco.js</customResource>
+						<customResource>${basedir}/src/main/docco/in-action.png</customResource>
+					</customResources>
+				</configuration>
+				<executions>
+					<execution>
+						<!-- Attachs to the early phase process-sources. You can generate annotated 
+							sources with command: $ mvn process-sources Output files will go to docco/ 
+							folder -->
+						<phase>process-sources</phase>
+						<goals>
+							<goal>docco</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>gwt-maven-plugin</artifactId>
+				<version>2.6.0</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>compile</goal>
+							<!--goal>test</goal -->
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<module>com.todomvc.GwtGaeChannelToDo</module>
+					<runTarget>GwtGaeChannelToDo.html</runTarget>
+					<hostedWebapp>${project.build.directory}/${project.build.finalName}</hostedWebapp>
+
+					<server>com.google.appengine.tools.development.gwt.AppEngineLauncher</server>
+					<appEngineVersion>1.7.7</appEngineVersion>
+					<!-- If you have your own 1.7.7 sdk installed and want to avoid downloading 
+						it again, set the path to it on appEngineHome property and gwt-maven-plugin 
+						will use it. -->
+					<!--appEngineHome>sdks</appEngineHome -->
+
+					<deploy>${project.build.directory}/${project.build.finalName}/WEB-INF/deploy</deploy>
+
+					<extraJvmArgs>-Xmx512M -Xss1024k</extraJvmArgs>
+				</configuration>
+			</plugin>
+			<!-- Copy static web files before executing gwt:run -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.1.1</version>
+				<executions>
+					<execution>
+						<phase>compile</phase>
+						<goals>
+							<goal>exploded</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.8</version>
+				<executions>
+					<execution>
+						<id>copy-deps-to-lib</id>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<includeArtifactIds>junit,mockito-all,aopalliance,javax.inject,jsr305,guava,guava-gwt,guice,guice-servlet,guice-assistedinject,gin</includeArtifactIds>
+							<outputDirectory>${basedir}/lib</outputDirectory>
+							<excludeTransitive>true</excludeTransitive>
+							<overWriteReleases>false</overWriteReleases>
+							<overWriteSnapshots>false</overWriteSnapshots>
+							<overWriteIfNewer>true</overWriteIfNewer>
+						</configuration>
+					</execution>
+					<execution>
+						<id>copy-deps-to-webapp-WEB-INF-lib</id>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
+						<configuration>
+							<includeArtifactIds>servlet-api,aopalliance,gwt-servlet,guava,guava-gwt,guice-servlet,appengine-api-1.0-sdk,appengine-api-labs,appengine-jsr107cache</includeArtifactIds>
+							<outputDirectory>${basedir}/src/main/webapp/WEB-INF/lib</outputDirectory>
+							<excludeTransitive>true</excludeTransitive>
+							<overWriteReleases>false</overWriteReleases>
+							<overWriteSnapshots>false</overWriteSnapshots>
+							<overWriteIfNewer>true</overWriteIfNewer>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

@@ -9,7 +9,7 @@ and AppEngine [Channel API](https://developers.google.com/appengine/docs/java/ch
 the [Command Pattern](http://en.wikipedia.org/wiki/Command_pattern).
 
 - To understand the approach please listen to Justin Fagnani on this 10 minutes [presentation](http://www.youtube.com/watch?v=wWhd9ZwvCyw&t=29m44s)
-- Walk through the code with the [annotated sources](http://dprotti.github.io/todomvc)
+- Walk through the code with the [annotated sources](http://dprotti.github.io/gwttododoc)
 - Try the [live demo](http://gwttodomvc.appspot.com)
 
 ## Folder Structure

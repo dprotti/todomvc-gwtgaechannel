@@ -31,15 +31,15 @@ import com.todomvc.shared.service.CommandServiceAsync;
 /*!
   Coordinates command execution activity on the browser.
 
-  - Registers client with server.
-  - Sends and receives Command's to and from server.
+  - Registers client with server
+  - Sends and receives Command's to and from server
   */
 public class CommandController {
 
     private static Logger logger = Logger.getLogger(CommandController.class.getName());
 
     /*!
-      Check this key piece: the
+      Check this key piece: 
       [CommandService](${basePath}/java/com/todomvc/shared/service/CommandService.java.html).
      */
     private final CommandServiceAsync commandService;
@@ -66,7 +66,11 @@ public class CommandController {
      * 
      * @param objectId ID of the object the client wants to edit through commands.
      */
-    /*! Registers client to edit a particular object. */
+    /*!
+      Registers client to edit a particular object.
+      On success, client have established a Channel API channel with the server
+      and can send and receive edit commands for the given object.
+     */
     public void openCommandChannel(final String objectId) {
         commandService.openChannel(objectId, clientId, new AsyncCallback<String>() {
 
@@ -91,6 +95,7 @@ public class CommandController {
         return socketListener;
     }
 
+    /*! Listener for commands received from the server through the Channel API. */
     private class CommandChannelListener implements SocketListener {
 
         @Override
@@ -99,7 +104,7 @@ public class CommandController {
         }
 
         /*!
-          Execute the commands received from the server regardless of whether they
+          Execute the commands received regardless of whether they
           are eager or not. Eagerness must be obeyed by originating client, not by
           listener clients.
          */
@@ -154,8 +159,8 @@ public class CommandController {
 
             @Override
             public void onSuccess(Command<?> updateCommand) {
+                /*! If non-eager command, execute the update command sent back by the server. */
                 if (!command.isEager()) {
-                    /*! Execute the update command sent back by the server. */
                     executor.execute(updateCommand);
                 }
             }

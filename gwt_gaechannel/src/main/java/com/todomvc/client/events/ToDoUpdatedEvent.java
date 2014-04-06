@@ -8,11 +8,11 @@ import com.google.gwt.event.shared.GwtEvent;
 import com.todomvc.shared.model.ToDo;
 
 /**
- * Event published when a task item have changed.
+ * Event published when a task have changed.
  *
  * @author Duilio Protti
  */
-/*! Event published when a task item have changed. */
+/*! Event published when a task have changed. */
 public class ToDoUpdatedEvent extends GwtEvent<ToDoUpdatedEvent.Handler> {
 
     public static final Type<Handler> TYPE = new Type<Handler>();

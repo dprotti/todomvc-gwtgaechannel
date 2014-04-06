@@ -38,7 +38,7 @@ import com.todomvc.shared.model.ToDo;
  */
 /*!
   A custom [Cell](http://www.gwtproject.org/doc/latest/DevGuideUiCustomCells.html) that renders
-  `ToDo` instances.
+  an individual task.
  */
 public class ToDoCell extends AbstractCell<ToDo> {
 
@@ -86,9 +86,8 @@ public class ToDoCell extends AbstractCell<ToDo> {
      */
     private boolean beginningEdit = false;
 
-    /*! Command controller used for executing edit commands on to-do's. */
+    /*! Dependencies. */
     private final CommandController commandController;
-
     private final ToDoPresenter presenter;
 
     public ToDoCell(ToDoPresenter presenter, CommandController commandController) {
@@ -132,22 +131,18 @@ public class ToDoCell extends AbstractCell<ToDo> {
 
         if (isEditing(toDo)) {
 
-            // handle keyup events
             if ("keyup".equals(type)) {
                 int keyCode = event.getKeyCode();
-
                 // handle enter key to commit the edit
                 if (keyCode == KeyCodes.KEY_ENTER) {
                     commitEdit(parent, toDo);
                     endEdit(context, parent, toDo);
                 }
-
                 // handle escape key to cancel the edit
                 if (keyCode == KeyCodes.KEY_ESCAPE) {
                     endEdit(context, parent, toDo);
                 }
             }
-
             // handle blur event
             if ("blur".equals(type) && !beginningEdit) {
                 commitEdit(parent, toDo);
@@ -176,7 +171,7 @@ public class ToDoCell extends AbstractCell<ToDo> {
                 // check whether the checkbox was clicked
                 if (tagName.equals("INPUT")) {
 
-                    // if so, synchronize the model state
+                    // if so, synchronize the model
                     InputElement input = clickedElement.cast();
                     Boolean completed = input.isChecked();
                     commandController.executeCommand(new SetCompletedToDoCommand(toDo, completed));
@@ -217,6 +212,7 @@ public class ToDoCell extends AbstractCell<ToDo> {
     /**
      * Begins editing the given item, rendering the cell in edit mode
      */
+    /*!- Helper methods */
     private void beginEdit(Context context, Element parent, ToDo value) {
         editingItem = value;
         renderCell(context, parent, value);

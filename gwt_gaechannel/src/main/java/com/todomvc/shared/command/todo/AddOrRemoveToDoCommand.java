@@ -9,10 +9,26 @@ import com.todomvc.shared.command.BaseCommand;
 import com.todomvc.shared.model.ToDo;
 import com.todomvc.shared.model.ToDoList;
 
+/**
+ * {@link com.todomvc.shared.command.Command} that either adds or
+ * else removes a task to/from a task list.
+ */
 /*!
-  [Command](${basePath}/java/com/todomvc/shared/command/Command.java.html) for
-  [ToDo](${basePath}/java/com/todomvc/shared/model/ToDo.java.html) addition to
-  and removal from [ToDoList](${basePath}/java/com/todomvc/shared/model/ToDoList.java.html)'s.
+  Creates a [Command](${basePath}/java/com/todomvc/shared/command/Command.java.html) that either
+  adds or else removes a [ToDo](${basePath}/java/com/todomvc/shared/model/ToDo.java.html) to/from
+  a given [ToDoList](${basePath}/java/com/todomvc/shared/model/ToDoList.java.html).
+  
+  Data carried:
+
+  - **id** of target task list
+  - **ToDo** to be added/removed
+  
+  The list is not transferred as part of the command, but only its id.
+  On both server and client side, command executors will
+  take care of loading the appropriate object and pass it to `Command.execute()`.
+
+  This is a key concept of the Command Pattern: commands carry minimal information;
+  only the **id** of the object that have changed, and the **delta**.
  */
 public class AddOrRemoveToDoCommand extends BaseCommand<ToDoList> {
 
@@ -22,20 +38,6 @@ public class AddOrRemoveToDoCommand extends BaseCommand<ToDoList> {
     protected AddOrRemoveToDoCommand() {
     }
 
-    /**
-     * Creates a {@link com.todomvc.shared.command.Command} that adds a new to-do to the
-     * given collection of to-do items.
-     */
-    /*!
-      Creates a command that adds or else removes a to-do to/from the given collection
-      of to-do items.
-      
-      The collection is not transferred  as part of the command. Instead only its id is
-      transferred on the command. On both server and client side, command executors will
-      take care of loading the appropriate object and pass it to `Command.execute()`.
-      This is a key concept of the Command Pattern: commands carry the minimal information;
-      only the **id** of the object that have changed, and the **delta**.
-     */
     public AddOrRemoveToDoCommand(String toDoListId, ToDo toDo, boolean isAddition) {
         super(checkNotNull(toDoListId), ToDoListCommandExecutor.TYPE);
         this.toDo = checkNotNull(toDo);
@@ -68,8 +70,8 @@ public class AddOrRemoveToDoCommand extends BaseCommand<ToDoList> {
 
     /*!
       Non-eager for additions, eager for removals.
-      When adding a new to-do the client waits for the server response in order
-      to have a proper `id` setup for the new to-do. 
+      When adding a new task the client waits for the server response in order
+      to have a proper `id` setup for the new task. 
      */
     @Override
     public boolean isEager() {

@@ -16,7 +16,14 @@ import com.todomvc.shared.model.ToDoList;
  *
  * @author Duilio Protti
  */
-/*! Removes from a task list a set of completed tasks. */
+/*!
+  Removes from a task list a set of completed tasks.
+
+  Data carried:
+
+  - **id** of target task list
+  - **ids** of tasks to be removed
+ */
 public class RemoveCompletedToDoListCommand extends BaseCommand<ToDoList> {
 
     private Set<String> idsOfTasksToRemove;

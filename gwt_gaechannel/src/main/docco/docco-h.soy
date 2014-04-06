@@ -58,17 +58,23 @@
 {template .story}
   <div class="story">
     <p>
-    <a href="http://www.youtube.com/watch?v=wWhd9ZwvCyw&t=29m44s" alt="Justin's presentation video">Justin Fagnani presented in Google I/O 2011</a>
-    (in 10 minutes) a conceptual overview of how his team builds collaborative apps at Google using GWT.
+    <a href="http://www.youtube.com/watch?v=wWhd9ZwvCyw&t=29m44s" alt="Justin's presentation video">Justin Fagnani presented in Google I/O
+    2011</a> (in 10 minutes) a conceptual overview of how his team builds collaborative apps at Google using GWT.
     His explanation is brilliant, but implementing such a scheme based only on the presentation would be a challenge, and to my knowledge there are no publicly
     available sample implementations.
     </p>
     <p>
     What comes next is a <a href="http://todomvc.com">TodoMVC</a> app which supports collaborative editing.
     When a user adds, modifies or removes a task, the change is reflected in real-time in all other browsers.
-    It's implemented using <a href="http://www.gwtproject.org/">GWT</a>,
-    App Engine <a href="https://developers.google.com/appengine/docs/java/channel/">Channel API</a> and
-    the <a href="http://en.wikipedia.org/wiki/Command_pattern">Command Pattern</a>.
+    You may try the <strong><a href="http://gwttodomvc.appspot.com">live demo</a></strong>.
+    It's implemented using:
+    <ul>
+      <li><a href="http://www.gwtproject.org/">GWT</a></li>
+      <li>App Engine <a href="https://developers.google.com/appengine/docs/java/channel/">Channel API</a></li>
+      <li>The <a href="http://en.wikipedia.org/wiki/Command_pattern">Command Pattern</a></li>
+    </ul>
+    </p>
+    <p>
     Understanding the code requires that you listened to the aforementioned 10
     minutes <a href="http://www.youtube.com/watch?v=wWhd9ZwvCyw&t=29m44s">presentation</a>.
     </p>
@@ -284,11 +290,11 @@
 </head>
 <body>
 <div id="docco-index">
-  <h1 id="main-title">{$title} <span class="warning">[Sample Only]</span></h1>
+  <h1 id="main-title">{$title} <span class="warning">[Annotated Sources]</span></h1>
   {call .story /}
   <h2>Annotated Sources</h2>
   <p>
-    Read in literate programming style the source code of the demo.<br>
+    Read in literate programming style the source code.<br>
     Suggested starting point: <a href="java/com/todomvc/client/ToDoPresenter.java.html">ToDoPresenter.java</a>.
   </p>
   <ul>

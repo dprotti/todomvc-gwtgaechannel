@@ -10,6 +10,16 @@ import javax.annotation.Nullable;
 import com.google.gwt.event.shared.EventHandler;
 import com.google.gwt.event.shared.GwtEvent;
 
+/**
+ * Base class for events that adds a new or else removes and existing element of type
+ * {@code T} from a collection of type {@code C}.
+ *
+ * @author Duilio Protti
+ */
+/*!
+  Base class for events that adds a new or else removes an existing element of type
+  `T` from a collection of type `C`.
+ */
 public abstract class AddOrRemoveEvent<T, C extends Collection<? extends T>, H extends EventHandler>
 		extends GwtEvent<H> {
 

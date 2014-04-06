@@ -16,13 +16,13 @@ import com.todomvc.shared.service.ToDoServiceAsync;
 
 /**
  * Loads model objects from the server at building time and after that keeps a client side
- * storage of model objects handled by retrieval/addition/removal operations.
+ * storage allowing to retrieve/add/remove model objects.
  *
  * @author Duilio Protti
  */
 /*!
   Loads model objects from the server at building time and after that keeps a client side
-  storage of model objects handled by retrieval/addition/removal operations.
+  storage allowing to retrieve/add/remove model objects.
  */
 public class ModelCache {
 

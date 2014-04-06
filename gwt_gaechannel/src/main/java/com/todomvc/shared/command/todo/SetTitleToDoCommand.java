@@ -6,9 +6,17 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.todomvc.shared.command.SetterCommand;
 import com.todomvc.shared.model.ToDo;
 
+/**
+ * Command that set the title of a task.
+ */
 /*!
-  [SetterCommand](${basePath}/java/com/todomvc/shared/command/SetterCommand.java.html) setting
-  the title of a task. 
+  [SetterCommand](${basePath}/java/com/todomvc/shared/command/SetterCommand.java.html) that
+  set the title of a task.
+
+  Data carried:
+
+  - **id** of target task
+  - **title** to be set
  */
 public class SetTitleToDoCommand extends SetterCommand<String, ToDo> {
 

@@ -6,9 +6,17 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.todomvc.shared.command.SetterCommand;
 import com.todomvc.shared.model.ToDo;
 
+/**
+ * Command that set the status of a task.
+ */
 /*!
-  [SetterCommand](${basePath}/java/com/todomvc/shared/command/SetterCommand.java.html) setting
-  the status of a task. 
+  [SetterCommand](${basePath}/java/com/todomvc/shared/command/SetterCommand.java.html) that
+  set the completion status of a task.
+
+  Data carried:
+
+  - **id** of target task
+  - **status** value to be set
  */
 public class SetCompletedToDoCommand extends SetterCommand<Boolean, ToDo> {
 

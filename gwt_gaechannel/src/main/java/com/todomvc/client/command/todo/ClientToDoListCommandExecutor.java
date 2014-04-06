@@ -15,11 +15,17 @@ import com.todomvc.shared.command.todo.ToDoListCommandExecutor;
 import com.todomvc.shared.model.ToDo;
 import com.todomvc.shared.model.ToDoList;
 
+/**
+ * Executes on the client the commands acting on {@link ToDoList}'s and publishes the
+ * changes on the global <a href=
+ * "http://www.gwtproject.org/javadoc/latest/com/google/gwt/event/shared/EventBus.html"
+ * >EventBus</a>.
+ */
 /*!
-  Client-side
-  [CommandExecutor](${basePath}/java/com/todomvc/shared/command/CommandExecutor.java.html)
-  for commands acting on
-  [ToDoList](${basePath}/java/com/todomvc/shared/model/ToDoList.java.html)'s.
+  Executes on the client the commands acting on
+  [ToDoList](${basePath}/java/com/todomvc/shared/model/ToDoList.java.html)'s and
+  publishes the changes on the global <a href=
+  [EventBus](http://www.gwtproject.org/javadoc/latest/com/google/gwt/event/shared/EventBus.html).
  */
 public class ClientToDoListCommandExecutor implements ToDoListCommandExecutor {
 
@@ -32,6 +38,27 @@ public class ClientToDoListCommandExecutor implements ToDoListCommandExecutor {
         this.modelCache = checkNotNull(modelCache);
     }
 
+    /**
+     * {@inheritDoc}
+     * <p>
+     * This client implementation executes the command and triggers the following events on the global
+     * <a href="http://www.gwtproject.org/javadoc/latest/com/google/gwt/event/shared/EventBus.html">EventBus</a>:
+     *
+     * <ul>
+     *   <li>{@link ToDoListAddOrRemoveEvent} if {@code command} is an {@link AddOrRemoveToDoCommand}</li>
+     *   <li>{@link ToDoListUpdatedEvent} otherwise</li>
+     * </ul>
+     * </p>
+     */
+    /*!
+      This client implementation executes the command and triggers the following events on the global
+      [EventBus](http://www.gwtproject.org/javadoc/latest/com/google/gwt/event/shared/EventBus.html):
+     
+      - [ToDoListAddOrRemoveEvent](${basePath}/java/com/todomvc/client/events/ToDoListAddOrRemoveEvent.java.html)
+        if command is
+        an [AddOrRemoveToDoCommand](${basePath}/java/com/todomvc/shared/command/todo/AddOrRemoveToDoCommand.java.html)
+      - [ToDoListUpdatedEvent](${basePath}/java/com/todomvc/client/events/ToDoListUpdatedEvent.java.html) otherwise
+     */
     @Override
     public Command<ToDoList> execute(Command<ToDoList> command) {
         checkNotNull(command);

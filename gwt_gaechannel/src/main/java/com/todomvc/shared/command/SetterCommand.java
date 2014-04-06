@@ -13,7 +13,14 @@ import com.todomvc.shared.model.HasID;
  *
  * @author Duilio Protti
  */
-/*! Command that sets a value of type `V` on objects of type `T`. */
+/*!
+  Command that sets a value of type `V` on objects of type `T`.
+
+  Data carried:
+
+  - **id** of target object
+  - **value** to be set
+ */
 public abstract class SetterCommand<V, T extends HasID> extends BaseCommand<T> {
 
     private V oldValue;
@@ -25,9 +32,10 @@ public abstract class SetterCommand<V, T extends HasID> extends BaseCommand<T> {
     public SetterCommand(String id, @Nullable V oldValue, @Nullable V newValue,
             String commandType) {
         super(checkNotNull(id), checkNotNull(commandType));
-        if (newValue.equals(oldValue)) {
+        if (Objects.equal(newValue, oldValue)) {
             // avoid processing commands that won't change anything  
-            throw new IllegalArgumentException("Command would be idempotent ('newValue' equals 'oldValue')");
+            throw new IllegalArgumentException(
+                    "Command would be idempotent, old and new value are equal to " + newValue);
         }
         this.oldValue = oldValue;
         this.newValue = newValue;

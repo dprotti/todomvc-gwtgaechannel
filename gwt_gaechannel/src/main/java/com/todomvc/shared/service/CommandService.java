@@ -13,7 +13,7 @@ import com.todomvc.shared.command.Command;
   Maintains a registry of clients that can edit objects by executing commands and sends an receives
   [Command](${basePath}/java/com/todomvc/shared/command/Command.java.html)'s
   to and from clients. Check the
-  [implementation](${basePath}/java/com/todomvc/server/service/CommandServiceImpl.java.html)
+  [implementation](${basePath}/java/com/todomvc/server/service/CommandServiceImpl.java.html).
  */
 @RemoteServiceRelativePath("cmd")
 public interface CommandService extends RemoteService {
@@ -43,7 +43,7 @@ public interface CommandService extends RemoteService {
 	 */
 	/*!
 	  Declared only to force [Command](${basePath}/java/com/todomvc/shared/command/Command.java.html)
-	  to be included in the serialization policy. Do not call.
+	  to be included in the GWT serialization policy. Do not call.
 	 */
 	Command<?> dummyCommand();
 }

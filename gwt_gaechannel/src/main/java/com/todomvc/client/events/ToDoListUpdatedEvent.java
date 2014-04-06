@@ -7,9 +7,13 @@ import com.google.gwt.event.shared.EventHandler;
 import com.google.gwt.event.shared.GwtEvent;
 import com.todomvc.shared.model.ToDoList;
 
+/**
+ * Event triggered when several <em>existing</em> tasks of a task list have changed,
+ * but the size of the list didn't (no task was added or removed).
+ */
 /*!
   Event triggered when several **existing** tasks of a task list have changed, but
-  the size of the list didn't.
+  the size of the list didn't (no task was added or removed).
  */
 public class ToDoListUpdatedEvent extends GwtEvent<ToDoListUpdatedEvent.Handler> {
 

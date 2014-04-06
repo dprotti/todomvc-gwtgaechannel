@@ -53,8 +53,7 @@ public class SetterCommandTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void testRefusesToBuildIdempotentCommand() {
-        Integer value = 13;
-        new TestSetterCommand("1", value, value);
+        new TestSetterCommand("1", null, null);
     }
 
     @Test

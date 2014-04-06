@@ -29,7 +29,7 @@ import com.todomvc.shared.service.CommandService;
   [CommandService](${basePath}/java/com/todomvc/shared/service/CommandService.java.html).
  */
 @Singleton
-@SuppressWarnings({"serial", "rawtypes"})
+@SuppressWarnings("rawtypes")
 public class CommandServiceImpl extends RemoteServiceServlet implements CommandService {
 
     /*!
@@ -56,6 +56,7 @@ public class CommandServiceImpl extends RemoteServiceServlet implements CommandS
     /*!
       Current implementation simply disregards `objectId` parameter. The client opens a
       "global" channel: will receive commands for any object being edited on the application.
+      TodoMVC app is simple enough so as to work well with a global channel.
      */
     @Override
     public String openChannel(String objectId, String clientId) throws IllegalArgumentException,

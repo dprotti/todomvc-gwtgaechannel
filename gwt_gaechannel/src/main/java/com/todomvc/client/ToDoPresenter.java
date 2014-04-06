@@ -25,14 +25,20 @@ import com.todomvc.shared.model.ToDoList;
 import com.todomvc.shared.service.ToDoServiceAsync;
 
 /**
- * The presenter for the ToDoMVC application.
+ * The presenter for the TodoMVC application.
  * This presenter is responsible for the life cycle of the {@link ToDo} instances.
  *
  * @author Colin Eberhardt
  * @author Duilio Protti
  *
  */
-/*! The presenter for the ToDoMVC application. */
+/*!
+  The presenter for the TodoMVC application.
+
+  Reacts to interactions with its view and updates application state (locally, on the
+  server and on all other editing clients) by executing commands through the
+  [CommandController](${basePath}/java/com/todomvc/client/command/CommandController.java.html). 
+ */
 public class ToDoPresenter implements Presenter<ToDoPresenter.Display> {
 
     /**
@@ -70,26 +76,26 @@ public class ToDoPresenter implements Presenter<ToDoPresenter.Display> {
         void setTaskStatistics(int totalTasks, int completedTasks);
 
         /**
-         * Gets the list of displayed {@link ToDo}'s.
+         * Gets the displayed task list.
          *
          * <ul>
          *   <li>Additions and removals to this list will be reflected in the view.</li>
-         *   <li>Modifications to {@link ToDo} instances contained in the list <em>WILL NOT</em>
+         *   <li>Modifications to individual tasks within the list <em>WILL NOT</em>
          *     be reflected in the view. Use instead <code>List.set(int, Object)</code> for
          *     updating individual {@link ToDo} instances in the view.</li>
          * </ul>
          */
         /*!
-          Gets the list of displayed ToDo's.
+          Gets the displayed task list.
          
-          - Additions and removals to the returned list are reflected in the view.
-          - Modifications to ToDo instances within the list **are not**
-            reflected in the view. We use instead `List.set(int, Object)` for
+          - List additions and removals automatically reflects on the view.
+          - Modifications to individual tasks within the list **are not**
+            reflected in the view. Should use instead `List.set(int, Object)` for
             updating individual ToDo instances in the view.
          */
         List<ToDo> getDisplayedToDos();
 
-        /*! Informs the view of the current routing state. */
+        /*! Informs the view of the current routing state (`ACTIVE`, `COMPLETED`, `ALL`). */
         void setRouting(ToDoRouting routing);
 
         /*! Informs the user that something went wrong. */
@@ -121,7 +127,7 @@ public class ToDoPresenter implements Presenter<ToDoPresenter.Display> {
     private List<ToDo> displayedToDos;
     private ToDoList toDos;
     private Display view;
-    private ToDoRouting routing = ToDoRouting.ALL; // TODO unnecessary init
+    private ToDoRouting routing;
 
     @Inject
     public ToDoPresenter(CommandController commandController, ToDoServiceAsync toDoService, EventBus eventBus,
@@ -142,7 +148,6 @@ public class ToDoPresenter implements Presenter<ToDoPresenter.Display> {
         this.view.setRouting(routing);
         displayedToDos = view.getDisplayedToDos();
         setupHistoryHandler();
-        // TODO how can we rely on the ModelCache instead of invoking the service directly?
         toDoService.getSingletonList(new AsyncCallback<ToDoList>() {
 
             @Override
@@ -157,22 +162,22 @@ public class ToDoPresenter implements Presenter<ToDoPresenter.Display> {
             }
             
         });
+        /*!
+          Listen to task changes. Task may be updated through local user interaction with
+          its [ToDoCell](${basePath}/java/com/todomvc/client/ToDoCell.java.html)
+          or by commands executed from remote clients.
+         */
         eventBus.addHandler(ToDoUpdatedEvent.TYPE, new ToDoUpdatedEvent.Handler() {
 
             @Override
             public void onEvent(ToDoUpdatedEvent event) {
                 updateDisplayOfExistingTask(event.getToDo());
-                // would be great to update iff 'completed' status have changed
+                // TODO would be great to update iff 'completed' status have changed
                 // and even more: without traversing the complete toDos list
                 updateTaskStatistics();
             }
 
         });
-    }
-
-    @VisibleForTesting
-    void setToDoList(ToDoList toDos) {
-        this.toDos = toDos;
     }
 
     /*!
@@ -235,11 +240,7 @@ public class ToDoPresenter implements Presenter<ToDoPresenter.Display> {
         }
     }
 
-    private void setToDos(ToDoList toDos) {
-        this.toDos = checkNotNull(toDos);
-    }
-
-    /*! Updates the task list rendered in the UI, respecting the current filter. */
+    /*! Updates the tasks rendered in the UI, respecting the current filter. */
     private void updateDisplayedToDoList() {
         displayedToDos.clear();
         for (ToDo task : toDos) {
@@ -296,34 +297,27 @@ public class ToDoPresenter implements Presenter<ToDoPresenter.Display> {
           If invocation to 
           [CommandController](${basePath}/java/com/todomvc/client/command/CommandController.java.html)
           succeeds, a `ToDoListUpdatedEvent` fire and our handler updates the view.
-        */
+         */
         commandController.executeCommand(new SetCompletedToDoListCommand(toDos, completed));
     }
 
-    /*! Adds a new task based on the user input field. */
+    /*! Adds a new task based on the user input field and fires a `ToDoListAddOrRemoveEvent`. */
     private void addTask() {
         String taskTitle = view.getTaskText().trim();
         if (taskTitle.isEmpty()) {
             return;
         }
-
         ToDo toDo = new ToDo(null, taskTitle, false);
         view.clearTaskText();
-        AddOrRemoveToDoCommand addCommand = new AddOrRemoveToDoCommand(toDos.getId(), toDo, true);
-        /*!
-          If command succeeds, a `ToDoListAddOrRemoveEvent` fire and
-          our handler updates the view.
-        */
-        commandController.executeCommand(addCommand);
+        commandController.executeCommand(new AddOrRemoveToDoCommand(toDos.getId(), toDo, true));
     }
 
     /**
      * Deletes the given task and fires a {@link ToDoListAddOrRemoveEvent}.
      */
-    /*! Deletes the given task and fires a `ToDoListAddOrRemoveEvent`. */
+    /*! Deletes the task and fires a `ToDoListAddOrRemoveEvent`. */
     public void deleteTask(ToDo task) {
         commandController.executeCommand(new AddOrRemoveToDoCommand(toDos.getId(), task, false));
-        removeTaskIfDisplayed(task);
     }
 
     private void removeTaskIfDisplayed(ToDo task) {
@@ -332,9 +326,19 @@ public class ToDoPresenter implements Presenter<ToDoPresenter.Display> {
         }
     }
 
+    /*! Removes all completed tasks and fires `ToDoListUpdatedEvent`. */
     private void clearCompletedTasks() {
-        // TODO triggers a ToDoListUpdatedEvent on success?
         commandController.executeCommand(new RemoveCompletedToDoListCommand(toDos));
+    }
+
+    /*!- Helper methods */
+    @VisibleForTesting
+    void setToDoList(ToDoList toDos) {
+        this.toDos = toDos;
+    }
+
+    private void setToDos(ToDoList toDos) {
+        this.toDos = checkNotNull(toDos);
     }
 
     private void showServerError(Throwable caught) {

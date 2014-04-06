@@ -17,6 +17,11 @@ import com.todomvc.shared.model.ToDoList;
 /*!
   Command that sets a value of type `V` on every identifiable object of type `E` contained
   in an identifiable collection.
+
+  Data carried:
+
+  - **id** of target collection
+  - **value** to be set
  */
 public abstract class BulkSetterCommand<V, E, T extends IdentifiableCollection<? extends E>>
         extends BaseCommand<T> {

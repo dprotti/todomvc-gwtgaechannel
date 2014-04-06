@@ -11,17 +11,11 @@ import com.todomvc.shared.command.Command;
 import com.todomvc.shared.command.todo.ToDoCommandExecutor;
 import com.todomvc.shared.model.ToDo;
 
-/**
- * Executes on the client the commands acting on {@link ToDo}'s and publishes
- * {@link ToDoUpdatedEvent}'s on the global <a href=
- * "http://www.gwtproject.org/javadoc/latest/com/google/gwt/event/shared/EventBus.html"
- * >EventBus</a>.
- */
 /*!
-  Executes on the client the commands acting on
-  [ToDo](${basePath}/java/com/todomvc/shared/model/ToDo.java.html)'s and
-  publishes `ToDoUpdatedEvent`'s on the global <a href=
-  [EventBus](http://www.gwtproject.org/javadoc/latest/com/google/gwt/event/shared/EventBus.html).
+  Client-side
+  [CommandExecutor](${basePath}/java/com/todomvc/shared/command/CommandExecutor.java.html)
+  for commands acting on
+  [ToDo](${basePath}/java/com/todomvc/shared/model/ToDo.java.html)'s.
  */
 public class ClientToDoCommandExecutor implements ToDoCommandExecutor {
 
@@ -34,25 +28,12 @@ public class ClientToDoCommandExecutor implements ToDoCommandExecutor {
         this.eventBus = checkNotNull(eventBus);
     }
 
-    /**
-     * {@inheritDoc}
-     * <p>
-     * This client implementation executes the command and triggers a
-     * {@link ToDoUpdatedEvent} on the global <a href=
-     * "http://www.gwtproject.org/javadoc/latest/com/google/gwt/event/shared/EventBus.html"
-     * >EventBus</a>.
-     * </p>
-     */
-    /*!
-      This client implementation executes the command and triggers a `ToDoUpdatedEvent` on the
-      global
-      [EventBus](http://www.gwtproject.org/javadoc/latest/com/google/gwt/event/shared/EventBus.html):
-     */
     @Override
     public Command<ToDo> execute(Command<ToDo> command) {
         checkNotNull(command);
         ToDo task = modelCache.getToDo(command.getTargetId());
         if (task == null) {
+            // TODO should we define a runtime CommandExecutionException?
             throw new RuntimeException("Cannot proceed. Unknown target object with id "
                     + command.getTargetId());
         }

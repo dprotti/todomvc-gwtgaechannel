@@ -16,13 +16,14 @@ import com.todomvc.shared.service.CommandService;
 /*!
   Helper class to serialize commands in the GWT RPC format.
 
-  GWT RPC has a built-in support for serialization.
+  GWT RPC has built-in support for serialization.
   It's used for moving objects between client and server when they communicate
-  through RemoteService's.
+  through [RemoteService's](http://www.gwtproject.org/doc/latest/DevGuideServerCommunication.html#DevGuidePlumbingDiagram).
 
   But we can extend such use beyond RemoteService's.
   In this TodoMVC we re-use GWT RPC serialization for serializing `Command`'s
-  sent from the server to the client. 
+  the server sends to the clients through
+  the [Channel API](https://developers.google.com/appengine/docs/java/channel/).
   */
 public class CommandSerializer implements CommandSerialization.Serializer {
 

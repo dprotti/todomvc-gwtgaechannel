@@ -10,6 +10,7 @@ public interface CommandServiceAsync
 {
 
     void openChannel( java.lang.String objectId, java.lang.String clientId, AsyncCallback<java.lang.String> callback );
+    void closeChannel( java.lang.String clientId, AsyncCallback<java.lang.Void> callback );
 
     void executeCommand( com.todomvc.shared.command.Command<?> command, java.lang.String clientId, AsyncCallback<com.todomvc.shared.command.Command<?>> callback );
 

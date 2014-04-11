@@ -72,6 +72,15 @@ public class CommandServiceImpl extends RemoteServiceServlet implements CommandS
         return token;
     }
 
+    /*! Silently ignores unknown client ids. */
+    @Override
+    public void closeChannel(String clientId) {
+        checkNotNull(clientId);
+        if (editors.contains(clientId)) {
+            editors.remove(clientId);
+        }
+    }
+
     /*!
       Executes the command through an executor, probably a
       [ServerCommandExecutor](${basePath}/java/com/todomvc/server/command/ServerCommandExecutor.java.html),

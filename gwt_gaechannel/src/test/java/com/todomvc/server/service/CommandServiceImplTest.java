@@ -44,6 +44,21 @@ public class CommandServiceImplTest {
         verify(channelService).createChannel(eq(ALICE));
     }
 
+    @Test(expected = IllegalStateException.class)
+    public void testCloseChannel() {
+        service.openChannel(TODO1, ALICE);
+
+        service.closeChannel(ALICE);
+
+        // should fail. nobody is editing
+        service.executeCommand(command, ALICE);
+    }
+
+    @Test
+    public void testCloseChannelDoNotFailForUnknownClientId() {
+        service.closeChannel("uqieruqwepior");
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void testClientCanOpenOnlyOneChannelPerObject() {
         service.openChannel(TODO1, ALICE);

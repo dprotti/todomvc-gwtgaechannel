@@ -32,6 +32,8 @@ public interface CommandService extends RemoteService {
      */
 	String openChannel(String objectId, String clientId) throws IllegalArgumentException;
 
+	void closeChannel(String clientId);
+
 	/**
 	 * Executes a command. The command is executed on the server and on all listening clients.
 	 */

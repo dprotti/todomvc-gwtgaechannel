@@ -1,3 +1,5 @@
 language: java
 jdk:
   - oraclejdk7
+before_script: mkdir -p shippable/testresults
+after_script: cp -a gwt_gaechannel/target/surefire-reports/*.xml shippable/testresults

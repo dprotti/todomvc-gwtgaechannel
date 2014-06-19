@@ -4,12 +4,12 @@
 This is [TodoMVC](http://todomvc.com) app supporting real-time collaboration.
 When a user adds, modifies or removes a task, the change is reflected in real-time in all other browsers.
 
-It's a sample of how this can be implemented using the both mature Google Web Toolkit ([GWT](http://www.gwtproject.org/))
+It's a sample of how this can be implemented using Google Web Toolkit ([GWT](http://www.gwtproject.org/))
 and AppEngine [Channel API](https://developers.google.com/appengine/docs/java/channel/), while applying
 the [Command Pattern](http://en.wikipedia.org/wiki/Command_pattern).
 
 - To understand the approach please listen to Justin Fagnani on this 10 minutes [presentation](http://www.youtube.com/watch?v=wWhd9ZwvCyw&t=29m44s)
-- Walk through the code with the [annotated sources](http://dprotti.github.io/gwttododoc)
+- Read the [annotated source code](http://dprotti.github.io/todomvc-gwtgaechannel/)
 - Try the **[live demo](http://gwttodomvc.appspot.com)**
 
 ## Folder Structure

@@ -1,13 +1,5 @@
 language: java
-
 jdk:
   - oraclejdk7
-
-install: ./run-from-terminal.sh &
-
 before_script: mkdir -p shippable/testresults
-
 after_script: cp -a gwt_gaechannel/target/surefire-reports/*.xml shippable/testresults
-
-script: ./waitForServerUp.sh && phantomjs gwt_gaechannel/src/test/js/loadPage.js https://127.0.0.1:8888
-

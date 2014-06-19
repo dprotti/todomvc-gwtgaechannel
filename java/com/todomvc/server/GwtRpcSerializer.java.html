@@ -1,0 +1,102 @@
+<!DOCTYPE html><html><head><meta http-equiv="content-type" content="text/html;charset=utf-8"><title>GwtRpcSerializer.java</title><link href="../../../../css/bootstrap.min.css" rel="stylesheet" type="text/css"/><link href="../../../../css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/><link href="../../../../css/atlassian-docco.css" rel="stylesheet" type="text/css"/><link href="../../../../gwttodo.css" rel="stylesheet" type="text/css"/><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="alternate stylesheet" class="codebrush light" title="IDEA" href="http://yandex.st/highlightjs/6.2/styles/idea.min.css"/><link rel="alternate stylesheet" class="codebrush light" title="Google Code" href="http://yandex.st/highlightjs/6.2/styles/googlecode.min.css"/><link rel="alternate stylesheet" class="codebrush light" title="GitHub" href="http://yandex.st/highlightjs/6.2/styles/github.min.css"/><link rel="alternate stylesheet" class="codebrush light" title="Visual Studio" href="http://yandex.st/highlightjs/6.2/styles/vs.min.css"/><link rel="alternate stylesheet" class="codebrush light" title="Magula" href="http://yandex.st/highlightjs/6.2/styles/magula.min.css"/><link rel="stylesheet" class="codebrush dark" title="Zenburn" href="http://yandex.st/highlightjs/6.2/styles/zenburn.min.css"/><link rel="alternate stylesheet" class="codebrush dark" title="Arta" href="http://yandex.st/highlightjs/6.2/styles/arta.min.css"/><link rel="alternate stylesheet" class="codebrush dark" title="Monokai" href="http://yandex.st/highlightjs/6.2/styles/monokai.min.css"/><link rel="alternate stylesheet" class="codebrush dark" title="IR Black" href="http://yandex.st/highlightjs/6.2/styles/ir_black.min.css"/><link rel="alternate stylesheet" class="codebrush dark" title="Solarized Dark" href="http://yandex.st/highlightjs/6.2/styles/solarized_dark.min.css"/><script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script><script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script><script type="text/javascript" src="http://yandex.st/highlightjs/6.2/highlight.min.js"></script><script type="text/javascript" src="../../../../js/jquery.cookie.js"></script><script type="text/javascript" src="../../../../js/bootstrap.min.js"></script><!-- Use our own attlassian-docco.js file to set Zenburn as default theme --><script type="text/javascript" src="../../../../gwttodo-atlassian-docco.js"></script></head><body><div class="navbar navbar-fixed-top"><div class="navbar-inner"><div class="container-fluid"><a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><div class="brand"><a href=../../../../index.html>GWT+GAE TodoMVC</a><span class="source-filename">GwtRpcSerializer.java</span></div><div class="nav-collapse"><ul class="nav"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Index <b class="caret"></b></a><ul class="dropdown-menu"><div class="nav-header">client</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/client/command/CommandDeserializerImpl.java.html">CommandDeserializerImpl.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/ModelCache.java.html">ModelCache.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/Presenter.java.html">Presenter.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/ToDoCell.java.html">ToDoCell.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/ToDoGinModule.java.html">ToDoGinModule.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/ToDoPresenter.java.html">ToDoPresenter.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/ToDoView.java.html">ToDoView.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/View.java.html">View.java</a></div></nav><div class="nav-header">client.command</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/client/command/ClientCommandExecutor.java.html">ClientCommandExecutor.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/command/CommandController.java.html">CommandController.java</a></div></nav><div class="nav-header">client.command.todo</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/client/command/todo/ClientToDoCommandExecutor.java.html">ClientToDoCommandExecutor.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/command/todo/ClientToDoListCommandExecutor.java.html">ClientToDoListCommandExecutor.java</a></div></nav><div class="nav-header">client.events</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/client/events/AddOrRemoveEvent.java.html">AddOrRemoveEvent.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/events/ToDoListAddOrRemoveEvent.java.html">ToDoListAddOrRemoveEvent.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/events/ToDoListUpdatedEvent.java.html">ToDoListUpdatedEvent.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/events/ToDoUpdatedEvent.java.html">ToDoUpdatedEvent.java</a></div></nav><div class="nav-header">server</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/server/GwtRpcSerializer.java.html">GwtRpcSerializer.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/server/ToDoServerInjector.java.html">ToDoServerInjector.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/server/ToDoServerModule.java.html">ToDoServerModule.java</a></div></nav><div class="nav-header">server.command</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/server/command/CommandSerializer.java.html">CommandSerializer.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/server/command/ServerCommandExecutor.java.html">ServerCommandExecutor.java</a></div></nav><div class="nav-header">server.command.todo</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/server/command/todo/ServerToDoCommandExecutor.java.html">ServerToDoCommandExecutor.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/server/command/todo/ServerToDoListCommandExecutor.java.html">ServerToDoListCommandExecutor.java</a></div></nav><div class="nav-header">server.service</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/server/service/CommandServiceImpl.java.html">CommandServiceImpl.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/server/service/ToDoServiceImpl.java.html">ToDoServiceImpl.java</a></div></nav><div class="nav-header">server.servlet</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/server/servlet/ChannelConnectionsHandler.java.html">ChannelConnectionsHandler.java</a></div></nav><div class="nav-header">shared.command</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/BaseCommand.java.html">BaseCommand.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/BulkSetterCommand.java.html">BulkSetterCommand.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/Command.java.html">Command.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/CommandExecutor.java.html">CommandExecutor.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/CommandSerialization.java.html">CommandSerialization.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/SetterCommand.java.html">SetterCommand.java</a></div></nav><div class="nav-header">shared.command.todo</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/todo/AddOrRemoveToDoCommand.java.html">AddOrRemoveToDoCommand.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/todo/RemoveCompletedToDoListCommand.java.html">RemoveCompletedToDoListCommand.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/todo/SetCompletedToDoCommand.java.html">SetCompletedToDoCommand.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/todo/SetCompletedToDoListCommand.java.html">SetCompletedToDoListCommand.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/todo/SetTitleToDoCommand.java.html">SetTitleToDoCommand.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/todo/ToDoCommandExecutor.java.html">ToDoCommandExecutor.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/todo/ToDoListCommandExecutor.java.html">ToDoListCommandExecutor.java</a></div></nav><div class="nav-header">shared.model</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/model/HasID.java.html">HasID.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/model/IdentifiableCollection.java.html">IdentifiableCollection.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/model/ToDo.java.html">ToDo.java</a></div></nav><div class="nav-header">shared.service</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/service/CommandService.java.html">CommandService.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/service/ToDoService.java.html">ToDoService.java</a></div></nav></ul></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Theme <b class="caret"></b></a><ul id="themeDropdown" class="dropdown-menu"></ul></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Layout <b class="caret"></b></a><ul class="dropdown-menu"><li class="active"><a href="#">Horizontal</a></li><li><a href="../../../../../vertical/java\com\todomvc\server\GwtRpcSerializer.java.html">Vertical</a></li></ul></li></ul></div><!--/.nav-collapse --></div></div></div><div class="container-fluid docco-container"><div id="section-0" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-0">0</a></span><div class="doctext hidden-doc"></div></div><div class="span6 code"><div class="hidden-code-line">------------------<a href="javascript:void(0)" class="hidden-code-toggle" index="0">Show Code (<span class="linecount"></span> lines)</a>------------------</div><pre class="hidden-code"><code class="java">package com.todomvc.server;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.lang.reflect.Method;
+import java.text.ParseException;
+import java.util.List;
+import java.util.Map;
+import java.util.logging.Logger;
+
+import com.google.common.base.Supplier;
+import com.google.common.base.Suppliers;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
+import com.google.gwt.user.client.rpc.SerializationException;
+import com.google.gwt.user.server.rpc.RPC;
+import com.google.gwt.user.server.rpc.SerializationPolicy;
+import com.google.gwt.user.server.rpc.SerializationPolicyLoader;</code></pre></div></div><div id="section-1" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-1">1</a></span><div class="doctext"><p>Serialize Java objects using GWT RPC serialization mechanisms. Based on  <a href="http://www.youtube.com/watch?v=wWhd9ZwvCyw&t=29m44s">ideas</a> from Justin Fagnani.</p></div></div><div class="span6 code"><pre><code class="java">public class GwtRpcSerializer {
+    private static final Logger logger = Logger
+            .getLogger(GwtRpcSerializer.class.getName());</code></pre></div></div><div id="section-2" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-2">2</a></span><div class="doctext"><p>Use the manifest.txt file created by rpc-manifest-builder tool.  manifest.txt contains for each <code>RemoteService</code> the name of its corresponding policy file.</p></div></div><div class="span6 code"><pre><code class="java">    private static final String RPC_MANIFEST_BASE_PATH   = &quot;WEB-INF/deploy/gwtgaechanneltodo/rpcPolicyManifest-aux&quot;;
+    private static final String RPC_MANIFEST_FILENAME    = &quot;manifest.txt&quot;;
+    private static final String RPC_MANIFESTS_BASE_PATH  = &quot;gwtgaechanneltodo&quot;;
+
+    private final Supplier&lt;Map&lt;String, SerializationPolicy&gt;&gt; serviceToSerializationPolicySupplier;
+
+    public GwtRpcSerializer() throws Exception {</code></pre></div></div><div id="section-3" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-3">3</a></span><div class="doctext"><p>Lazily instantiate the map of serialization policies to keep the  construction of this object cheap and prevent performance issues when  starting up a server on AppEngine.</p></div></div><div class="span6 code"><pre><code class="java">        serviceToSerializationPolicySupplier = Suppliers
+                .memoize(new Supplier&lt;Map&lt;String, SerializationPolicy&gt;&gt;() {
+                    @Override
+                    public Map&lt;String, SerializationPolicy&gt; get() {
+                        return loadSerializationPolicies();
+                    }
+                });
+    }</code></pre></div></div><div id="section-4" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-4">4</a></span><div class="doctext"><p>The public GWT API for serializing objects is the static method <code>RPC.encodeResponseForSuccess()</code>.  It requires a reference to a <code>java.lang.reflect Method</code> whose return value has the same type than  the type of object <code>o</code>.  RPC.encodeResponseForSuccess() does not invoke the method, it require it simply to determine  the declared return type.</p></div></div><div class="span6 code"><pre><code class="java">    public String serialize(Object o, Method method) {
+        String methodClassName = method.getDeclaringClass().getName();
+        Map&lt;String, SerializationPolicy&gt; serviceToSerializationPolicy = serviceToSerializationPolicySupplier
+                .get();</code></pre></div></div><div id="section-5" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-5">5</a></span><div class="doctext"><p>Get the serialization policy for the method whose return type equals the type  of the object to be serialized.</p></div></div><div class="span6 code"><pre><code class="java">        SerializationPolicy serializationPolicy = serviceToSerializationPolicy
+                .get(methodClassName);
+        if (serializationPolicy == null) {
+            throw new RuntimeException(
+                    &quot;Could not find serialization policy for &quot; + methodClassName);
+        }
+        try {</code></pre></div></div><div id="section-6" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-6">6</a></span><div class="doctext"><p>Ask GWT to serialize the object and return such a string representation. </p></div></div><div class="span6 code"><pre><code class="java">            return RPC.encodeResponseForSuccess(method, o, serializationPolicy);
+        } catch (SerializationException e) {
+            throw new RuntimeException(e);
+        }
+    }</code></pre></div></div><div id="section-7" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-7">7</a></span><div class="doctext"><p>Loads the serialization policies, one for each RemoteService, from the auxiliary manifest.txt  built by rpc-manifest-builder tool.</p></div></div><div class="span6 code"><pre><code class="java">    private Map&lt;String, SerializationPolicy&gt; loadSerializationPolicies() {
+        BufferedReader reader = null;
+        try {
+            InputStream in = new FileInputStream(new File(RPC_MANIFEST_BASE_PATH + &quot;/&quot; + RPC_MANIFEST_FILENAME));
+            reader = new BufferedReader(new InputStreamReader(in));
+            Map&lt;String, SerializationPolicy&gt; serializationPolicies = Maps.newHashMap();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                if (line.startsWith(&quot;#&quot;)) {
+                    continue;
+                }
+                String[] parts = line.split(&quot;,&quot;);
+                String service = parts[0].trim();
+                String strongName = parts[1].trim();
+                serializationPolicies.put(
+                        service,
+                        loadSerializationPolicy(RPC_MANIFESTS_BASE_PATH, strongName));
+            }
+            return serializationPolicies;
+        } catch (IOException ioe) {
+            logger.severe(&quot;Error loading manifest.txt - collaborative editing will not work. Reason: &quot;
+                    + ioe.getLocalizedMessage());
+            throw new RuntimeException(ioe);
+        } finally {
+            try {
+                if (reader != null) {
+                    reader.close();
+                }
+            } catch (IOException ioe) {
+                throw new RuntimeException(ioe);
+            }
+        }
+    }
+
+    private SerializationPolicy loadSerializationPolicy(String path,
+            String strongName) throws IOException {
+        logger.fine(&quot;Loading serialization policy &quot; + path + &quot;/&quot; + strongName + &quot;...&quot;);
+        InputStream in = new FileInputStream(new File(path, strongName));
+
+        List&lt;ClassNotFoundException&gt; exceptions = Lists.newArrayList();
+        try {
+            SerializationPolicy policy = SerializationPolicyLoader
+                    .loadFromStream(in, exceptions);
+            if (!exceptions.isEmpty()) {
+                logger.warning(&quot;Error finding serializable classes on server classpath: &quot;
+                        + exceptions);
+            }
+            return policy;
+        } catch (ParseException e) {
+            throw new RuntimeException(&quot;Error parsing RPC file : &quot; + strongName, e);
+        }
+    }
+}</code></pre></div></div></div><div id="grabber"></div></body></html>

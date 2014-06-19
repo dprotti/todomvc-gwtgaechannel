@@ -1,0 +1,250 @@
+<!DOCTYPE html><html><head><meta http-equiv="content-type" content="text/html;charset=utf-8"><title>ToDoPresenter.java</title><link href="../../../../css/bootstrap.min.css" rel="stylesheet" type="text/css"/><link href="../../../../css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/><link href="../../../../css/atlassian-docco.css" rel="stylesheet" type="text/css"/><link href="../../../../gwttodo.css" rel="stylesheet" type="text/css"/><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="alternate stylesheet" class="codebrush light" title="IDEA" href="http://yandex.st/highlightjs/6.2/styles/idea.min.css"/><link rel="alternate stylesheet" class="codebrush light" title="Google Code" href="http://yandex.st/highlightjs/6.2/styles/googlecode.min.css"/><link rel="alternate stylesheet" class="codebrush light" title="GitHub" href="http://yandex.st/highlightjs/6.2/styles/github.min.css"/><link rel="alternate stylesheet" class="codebrush light" title="Visual Studio" href="http://yandex.st/highlightjs/6.2/styles/vs.min.css"/><link rel="alternate stylesheet" class="codebrush light" title="Magula" href="http://yandex.st/highlightjs/6.2/styles/magula.min.css"/><link rel="stylesheet" class="codebrush dark" title="Zenburn" href="http://yandex.st/highlightjs/6.2/styles/zenburn.min.css"/><link rel="alternate stylesheet" class="codebrush dark" title="Arta" href="http://yandex.st/highlightjs/6.2/styles/arta.min.css"/><link rel="alternate stylesheet" class="codebrush dark" title="Monokai" href="http://yandex.st/highlightjs/6.2/styles/monokai.min.css"/><link rel="alternate stylesheet" class="codebrush dark" title="IR Black" href="http://yandex.st/highlightjs/6.2/styles/ir_black.min.css"/><link rel="alternate stylesheet" class="codebrush dark" title="Solarized Dark" href="http://yandex.st/highlightjs/6.2/styles/solarized_dark.min.css"/><script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script><script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script><script type="text/javascript" src="http://yandex.st/highlightjs/6.2/highlight.min.js"></script><script type="text/javascript" src="../../../../js/jquery.cookie.js"></script><script type="text/javascript" src="../../../../js/bootstrap.min.js"></script><!-- Use our own attlassian-docco.js file to set Zenburn as default theme --><script type="text/javascript" src="../../../../gwttodo-atlassian-docco.js"></script></head><body><div class="navbar navbar-fixed-top"><div class="navbar-inner"><div class="container-fluid"><a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><div class="brand"><a href=../../../../index.html>GWT+GAE TodoMVC</a><span class="source-filename">ToDoPresenter.java</span></div><div class="nav-collapse"><ul class="nav"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Index <b class="caret"></b></a><ul class="dropdown-menu"><div class="nav-header">client</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/client/command/CommandDeserializerImpl.java.html">CommandDeserializerImpl.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/ModelCache.java.html">ModelCache.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/Presenter.java.html">Presenter.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/ToDoCell.java.html">ToDoCell.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/ToDoGinModule.java.html">ToDoGinModule.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/ToDoPresenter.java.html">ToDoPresenter.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/ToDoView.java.html">ToDoView.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/View.java.html">View.java</a></div></nav><div class="nav-header">client.command</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/client/command/ClientCommandExecutor.java.html">ClientCommandExecutor.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/command/CommandController.java.html">CommandController.java</a></div></nav><div class="nav-header">client.command.todo</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/client/command/todo/ClientToDoCommandExecutor.java.html">ClientToDoCommandExecutor.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/command/todo/ClientToDoListCommandExecutor.java.html">ClientToDoListCommandExecutor.java</a></div></nav><div class="nav-header">client.events</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/client/events/AddOrRemoveEvent.java.html">AddOrRemoveEvent.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/events/ToDoListAddOrRemoveEvent.java.html">ToDoListAddOrRemoveEvent.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/events/ToDoListUpdatedEvent.java.html">ToDoListUpdatedEvent.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/events/ToDoUpdatedEvent.java.html">ToDoUpdatedEvent.java</a></div></nav><div class="nav-header">server</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/server/GwtRpcSerializer.java.html">GwtRpcSerializer.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/server/ToDoServerInjector.java.html">ToDoServerInjector.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/server/ToDoServerModule.java.html">ToDoServerModule.java</a></div></nav><div class="nav-header">server.command</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/server/command/CommandSerializer.java.html">CommandSerializer.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/server/command/ServerCommandExecutor.java.html">ServerCommandExecutor.java</a></div></nav><div class="nav-header">server.command.todo</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/server/command/todo/ServerToDoCommandExecutor.java.html">ServerToDoCommandExecutor.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/server/command/todo/ServerToDoListCommandExecutor.java.html">ServerToDoListCommandExecutor.java</a></div></nav><div class="nav-header">server.service</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/server/service/CommandServiceImpl.java.html">CommandServiceImpl.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/server/service/ToDoServiceImpl.java.html">ToDoServiceImpl.java</a></div></nav><div class="nav-header">server.servlet</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/server/servlet/ChannelConnectionsHandler.java.html">ChannelConnectionsHandler.java</a></div></nav><div class="nav-header">shared.command</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/BaseCommand.java.html">BaseCommand.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/BulkSetterCommand.java.html">BulkSetterCommand.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/Command.java.html">Command.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/CommandExecutor.java.html">CommandExecutor.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/CommandSerialization.java.html">CommandSerialization.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/SetterCommand.java.html">SetterCommand.java</a></div></nav><div class="nav-header">shared.command.todo</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/todo/AddOrRemoveToDoCommand.java.html">AddOrRemoveToDoCommand.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/todo/RemoveCompletedToDoListCommand.java.html">RemoveCompletedToDoListCommand.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/todo/SetCompletedToDoCommand.java.html">SetCompletedToDoCommand.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/todo/SetCompletedToDoListCommand.java.html">SetCompletedToDoListCommand.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/todo/SetTitleToDoCommand.java.html">SetTitleToDoCommand.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/todo/ToDoCommandExecutor.java.html">ToDoCommandExecutor.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/todo/ToDoListCommandExecutor.java.html">ToDoListCommandExecutor.java</a></div></nav><div class="nav-header">shared.model</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/model/HasID.java.html">HasID.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/model/IdentifiableCollection.java.html">IdentifiableCollection.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/model/ToDo.java.html">ToDo.java</a></div></nav><div class="nav-header">shared.service</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/service/CommandService.java.html">CommandService.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/service/ToDoService.java.html">ToDoService.java</a></div></nav></ul></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Theme <b class="caret"></b></a><ul id="themeDropdown" class="dropdown-menu"></ul></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Layout <b class="caret"></b></a><ul class="dropdown-menu"><li class="active"><a href="#">Horizontal</a></li><li><a href="../../../../../vertical/java\com\todomvc\client\ToDoPresenter.java.html">Vertical</a></li></ul></li></ul></div><!--/.nav-collapse --></div></div></div><div class="container-fluid docco-container"><div id="section-0" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-0">0</a></span><div class="doctext hidden-doc"></div></div><div class="span6 code"><div class="hidden-code-line">------------------<a href="javascript:void(0)" class="hidden-code-toggle" index="0">Show Code (<span class="linecount"></span> lines)</a>------------------</div><pre class="hidden-code"><code class="java">package com.todomvc.client;
+
+import static com.google.common.base.Preconditions.checkNotNull;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
+import com.google.common.annotations.VisibleForTesting;
+import com.google.gwt.event.logical.shared.ValueChangeEvent;
+import com.google.gwt.event.logical.shared.ValueChangeHandler;
+import com.google.gwt.event.shared.EventBus;
+import com.google.gwt.place.shared.PlaceHistoryHandler.Historian;
+import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.todomvc.client.command.CommandController;
+import com.todomvc.client.events.ToDoListAddOrRemoveEvent;
+import com.todomvc.client.events.ToDoListUpdatedEvent;
+import com.todomvc.client.events.ToDoUpdatedEvent;
+import com.todomvc.shared.command.todo.AddOrRemoveToDoCommand;
+import com.todomvc.shared.command.todo.RemoveCompletedToDoListCommand;
+import com.todomvc.shared.command.todo.SetCompletedToDoListCommand;
+import com.todomvc.shared.model.ToDo;
+import com.todomvc.shared.model.ToDoList;
+import com.todomvc.shared.service.ToDoServiceAsync;</code></pre></div></div><div id="section-1" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-1">1</a></span><div class="doctext"><p>The presenter for the TodoMVC application.</p><p>Reacts to interactions with its view and updates application state (locally, on the  server and on all other editing clients) by executing commands through the  <a href="../../../../java/com/todomvc/client/command/CommandController.java.html">CommandController</a>. </p></div></div><div class="span6 code"><pre><code class="java">public class ToDoPresenter implements Presenter&lt;ToDoPresenter.Display&gt; {</code></pre></div></div><div id="section-2" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-2">2</a></span><div class="doctext"><p>The interface that a view for this presenter must implement. </p></div></div><div class="span6 code"><pre><code class="java">    public interface Display extends View&lt;ToDoPresenter&gt; {
+
+        public interface EventHandler {
+            void addTask();
+        
+            void clearCompletedTasks();
+        
+            void markAllCompleted(boolean completed);
+        }
+
+        void addhandler(Display.EventHandler handler);
+
+        String getTaskText();
+
+        void clearTaskText();
+
+        void setTaskStatistics(int totalTasks, int completedTasks);</code></pre></div></div><div id="section-3" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-3">3</a></span><div class="doctext"><p>Gets the displayed task list.</p>
+<ul>
+  <li>List additions and removals automatically reflects on the view.</li>
+  <li>Modifications to individual tasks within the list <strong>are not</strong> reflected in the view. Should use instead <code>List.set(int, Object)</code> for updating individual ToDo instances in the view.</li>
+</ul></div></div><div class="span6 code"><pre><code class="java">        List&lt;ToDo&gt; getDisplayedToDos();</code></pre></div></div><div id="section-4" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-4">4</a></span><div class="doctext"><p>Informs the view of the current routing state (<code>ACTIVE</code>, <code>COMPLETED</code>, <code>ALL</code>). </p></div></div><div class="span6 code"><pre><code class="java">        void setRouting(ToDoRouting routing);</code></pre></div></div><div id="section-5" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-5">5</a></span><div class="doctext"><p>Informs the user that something went wrong. </p></div></div><div class="span6 code"><pre><code class="java">        void showError(String message);
+    }</code></pre></div></div><div id="section-6" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-6">6</a></span><div class="doctext"><p>Handler for view events, defers to private presenter methods. </p></div></div><div class="span6 code"><pre><code class="java">    private final Display.EventHandler viewEventHandler = new Display.EventHandler() {
+        @Override
+        public void addTask() {
+            ToDoPresenter.this.addTask();
+        }
+
+        @Override
+        public void clearCompletedTasks() {
+            ToDoPresenter.this.clearCompletedTasks();
+        }
+
+        @Override
+        public void markAllCompleted(boolean completed) {
+            ToDoPresenter.this.markAllCompleted(completed);
+        }
+    };
+
+    private final CommandController commandController;
+    private final ToDoServiceAsync toDoService;
+    private final EventBus eventBus;
+    private final Historian historian;
+    private List&lt;ToDo&gt; displayedToDos;
+    private ToDoList toDos;
+    private Display view;
+    private ToDoRouting routing;
+
+    @Inject
+    public ToDoPresenter(CommandController commandController, ToDoServiceAsync toDoService, EventBus eventBus,
+                Historian historian) {
+        this.commandController = checkNotNull(commandController);
+        this.toDoService = checkNotNull(toDoService);
+        this.eventBus = checkNotNull(eventBus);
+        this.historian = checkNotNull(historian);
+
+        String initialToken = historian.getToken();
+        routing = parseRoutingToken(initialToken);
+    }
+
+    @Override
+    public void bindView(final Display view) {
+        this.view = checkNotNull(view);
+        this.view.addhandler(viewEventHandler);
+        this.view.setRouting(routing);
+        displayedToDos = view.getDisplayedToDos();
+        setupHistoryHandler();
+        toDoService.getSingletonList(new AsyncCallback&lt;ToDoList&gt;() {
+
+            @Override
+            public void onFailure(Throwable caught) {
+                showServerError(caught);
+            }
+
+            @Override
+            public void onSuccess(ToDoList toDos) {
+                initListEditingAndConnectHandlers(toDos);
+                updateTaskStatistics();
+            }
+            
+        });</code></pre></div></div><div id="section-7" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-7">7</a></span><div class="doctext"><p>Listen to task changes. Task may be updated through local user interaction with  its <a href="../../../../java/com/todomvc/client/ToDoCell.java.html">ToDoCell</a>  or by commands executed from remote clients.</p></div></div><div class="span6 code"><pre><code class="java">        eventBus.addHandler(ToDoUpdatedEvent.TYPE, new ToDoUpdatedEvent.Handler() {
+
+            @Override
+            public void onEvent(ToDoUpdatedEvent event) {
+                updateDisplayOfExistingTask(event.getToDo());
+                // TODO would be great to update iff &#39;completed&#39; status have changed
+                // and even more: without traversing the complete toDos list
+                updateTaskStatistics();
+            }
+
+        });
+    }</code></pre></div></div><div id="section-8" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-8">8</a></span><div class="doctext"><p>With the given task list:</p>
+<ul>
+  <li>store a reference to it</li>
+  <li>register with the server as an editor of the list</li>
+  <li>listen for changes to the list</li>
+</ul></div></div><div class="span6 code"><pre><code class="java">    @VisibleForTesting
+    void initListEditingAndConnectHandlers(ToDoList list) {
+        setToDoList(list);
+        commandController.openCommandChannel(list.getId());
+        eventBus.addHandler(ToDoListAddOrRemoveEvent.TYPE, new ToDoListAddOrRemoveEvent.Handler() {
+
+            @Override
+            public void onEvent(ToDoListAddOrRemoveEvent event) {
+                setToDos(event.getToDoList());
+                if (event.isAddition()) {
+                    maybeDisplayNewTask(event.getAddedElement());
+                } else {
+                    removeTaskIfDisplayed(event.getRemovedElement());
+                }
+                updateTaskStatistics();
+            }
+
+        });
+        eventBus.addHandler(ToDoListUpdatedEvent.TYPE, new ToDoListUpdatedEvent.Handler() {
+
+            @Override
+            public void onEvent(ToDoListUpdatedEvent event) {
+                setToDos(event.getToDoList());
+                updateDisplayedToDoList();
+                updateTaskStatistics();
+            }
+
+        });
+        updateDisplayedToDoList();
+    }</code></pre></div></div><div id="section-9" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-9">9</a></span><div class="doctext"><p>Set up the history change handler, which provides routing. </p></div></div><div class="span6 code"><pre><code class="java">    private void setupHistoryHandler() {
+        historian.addValueChangeHandler(new ValueChangeHandler&lt;String&gt;() {
+            public void onValueChange(ValueChangeEvent&lt;String&gt; event) {
+                String historyToken = event.getValue();
+                routing = parseRoutingToken(historyToken);
+                view.setRouting(routing);
+                updateDisplayedToDoList();
+            }
+        });
+    }
+
+    private ToDoRouting parseRoutingToken(String token ) {
+        if (token.equals(&quot;/active&quot;)) {
+            return ToDoRouting.ACTIVE;
+        } else if (token.equals(&quot;/completed&quot;)) {
+            return ToDoRouting.COMPLETED;
+        } else {
+            return ToDoRouting.ALL;
+        }
+    }</code></pre></div></div><div id="section-10" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-10">10</a></span><div class="doctext"><p>Updates the tasks rendered in the UI, respecting the current filter. </p></div></div><div class="span6 code"><pre><code class="java">    private void updateDisplayedToDoList() {
+        displayedToDos.clear();
+        for (ToDo task : toDos) {
+            if (shouldDisplayTask(task)) {
+                displayedToDos.add(task);
+            }
+        }
+    }
+
+    private void maybeDisplayNewTask(ToDo task) {
+        if (shouldDisplayTask(task)) {
+            displayedToDos.add(task);
+        }
+    }
+
+    private void updateDisplayOfExistingTask(ToDo task) {
+        if (!shouldDisplayTask(task)) {
+            if (displayedToDos.contains(task)) {
+                displayedToDos.remove(task);
+            }
+            return;
+        }
+        if (!displayedToDos.contains(task)) {
+            displayedToDos.add(task);
+            return;
+        }
+        // If we are here, the to-do is being displayed with current filter so update its
+        // view (re-render its Cell).
+        for (int i = 0; i &lt; displayedToDos.size(); i++) {
+            if (displayedToDos.get(i).getId().equals(task.getId())) {
+                displayedToDos.set(i, task);
+                break;
+            }
+        }
+    }
+
+    private boolean shouldDisplayTask(ToDo toDo) {
+        return routing.getMatcher().matches(toDo);
+    }
+
+    private void updateTaskStatistics() {
+        int totalTasks = toDos.size();
+        int completedTasks = 0;
+        for (ToDo task : toDos) {
+            if (task.isCompleted()) {
+                completedTasks++;
+            }
+        }
+        view.setTaskStatistics(totalTasks, completedTasks);
+    }
+
+    private void markAllCompleted(boolean completed) {</code></pre></div></div><div id="section-11" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-11">11</a></span><div class="doctext"><p>If invocation to  <a href="../../../../java/com/todomvc/client/command/CommandController.java.html">CommandController</a>  succeeds, a <code>ToDoListUpdatedEvent</code> fire and our handler updates the view.</p></div></div><div class="span6 code"><pre><code class="java">        commandController.executeCommand(new SetCompletedToDoListCommand(toDos, completed));
+    }</code></pre></div></div><div id="section-12" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-12">12</a></span><div class="doctext"><p>Adds a new task based on the user input field and fires a <code>ToDoListAddOrRemoveEvent</code>. </p></div></div><div class="span6 code"><pre><code class="java">    private void addTask() {
+        String taskTitle = view.getTaskText().trim();
+        if (taskTitle.isEmpty()) {
+            return;
+        }
+        ToDo toDo = new ToDo(null, taskTitle, false);
+        view.clearTaskText();
+        commandController.executeCommand(new AddOrRemoveToDoCommand(toDos.getId(), toDo, true));
+    }</code></pre></div></div><div id="section-13" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-13">13</a></span><div class="doctext"><p>Deletes the task and fires a <code>ToDoListAddOrRemoveEvent</code>. </p></div></div><div class="span6 code"><pre><code class="java">    public void deleteTask(ToDo task) {
+        commandController.executeCommand(new AddOrRemoveToDoCommand(toDos.getId(), task, false));
+    }
+
+    private void removeTaskIfDisplayed(ToDo task) {
+        if (displayedToDos.contains(task)) {
+            displayedToDos.remove(task);
+        }
+    }</code></pre></div></div><div id="section-14" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-14">14</a></span><div class="doctext"><p>Removes all completed tasks and fires <code>ToDoListUpdatedEvent</code>. </p></div></div><div class="span6 code"><pre><code class="java">    private void clearCompletedTasks() {
+        commandController.executeCommand(new RemoveCompletedToDoListCommand(toDos));
+    }</code></pre></div></div><div id="section-15" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-15">15</a></span><div class="doctext hidden-doc"></div></div><div class="span6 code"><div class="hidden-code-line">------------------<a href="javascript:void(0)" class="hidden-code-toggle" index="15">Show  Helper methods  Code (<span class="linecount"></span> lines)</a>------------------</div><pre class="hidden-code"><code class="java">    @VisibleForTesting
+    void setToDoList(ToDoList toDos) {
+        this.toDos = toDos;
+    }
+
+    private void setToDos(ToDoList toDos) {
+        this.toDos = checkNotNull(toDos);
+    }
+
+    private void showServerError(Throwable caught) {
+        view.showError(&quot;An error occurred while attempting to contact the server&lt;hr&gt;Error was: &quot;
+                + caught.getLocalizedMessage());
+    }
+}</code></pre></div></div></div><div id="grabber"></div></body></html>

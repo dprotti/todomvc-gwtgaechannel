@@ -1,0 +1,116 @@
+<!DOCTYPE html><html><head><meta http-equiv="content-type" content="text/html;charset=utf-8"><title>CommandController.java</title><link href="../../../../../css/bootstrap.min.css" rel="stylesheet" type="text/css"/><link href="../../../../../css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/><link href="../../../../../css/atlassian-docco.css" rel="stylesheet" type="text/css"/><link href="../../../../../gwttodo.css" rel="stylesheet" type="text/css"/><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="alternate stylesheet" class="codebrush light" title="IDEA" href="http://yandex.st/highlightjs/6.2/styles/idea.min.css"/><link rel="alternate stylesheet" class="codebrush light" title="Google Code" href="http://yandex.st/highlightjs/6.2/styles/googlecode.min.css"/><link rel="alternate stylesheet" class="codebrush light" title="GitHub" href="http://yandex.st/highlightjs/6.2/styles/github.min.css"/><link rel="alternate stylesheet" class="codebrush light" title="Visual Studio" href="http://yandex.st/highlightjs/6.2/styles/vs.min.css"/><link rel="alternate stylesheet" class="codebrush light" title="Magula" href="http://yandex.st/highlightjs/6.2/styles/magula.min.css"/><link rel="stylesheet" class="codebrush dark" title="Zenburn" href="http://yandex.st/highlightjs/6.2/styles/zenburn.min.css"/><link rel="alternate stylesheet" class="codebrush dark" title="Arta" href="http://yandex.st/highlightjs/6.2/styles/arta.min.css"/><link rel="alternate stylesheet" class="codebrush dark" title="Monokai" href="http://yandex.st/highlightjs/6.2/styles/monokai.min.css"/><link rel="alternate stylesheet" class="codebrush dark" title="IR Black" href="http://yandex.st/highlightjs/6.2/styles/ir_black.min.css"/><link rel="alternate stylesheet" class="codebrush dark" title="Solarized Dark" href="http://yandex.st/highlightjs/6.2/styles/solarized_dark.min.css"/><script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script><script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script><script type="text/javascript" src="http://yandex.st/highlightjs/6.2/highlight.min.js"></script><script type="text/javascript" src="../../../../../js/jquery.cookie.js"></script><script type="text/javascript" src="../../../../../js/bootstrap.min.js"></script><!-- Use our own attlassian-docco.js file to set Zenburn as default theme --><script type="text/javascript" src="../../../../../gwttodo-atlassian-docco.js"></script></head><body><div class="navbar navbar-fixed-top"><div class="navbar-inner"><div class="container-fluid"><a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><div class="brand"><a href=../../../../../index.html>GWT+GAE TodoMVC</a><span class="source-filename">CommandController.java</span></div><div class="nav-collapse"><ul class="nav"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Index <b class="caret"></b></a><ul class="dropdown-menu"><div class="nav-header">client</div><nav><div class="source-file-link"><a href="../../../../../java/com/todomvc/client/command/CommandDeserializerImpl.java.html">CommandDeserializerImpl.java</a></div><div class="source-file-link"><a href="../../../../../java/com/todomvc/client/ModelCache.java.html">ModelCache.java</a></div><div class="source-file-link"><a href="../../../../../java/com/todomvc/client/Presenter.java.html">Presenter.java</a></div><div class="source-file-link"><a href="../../../../../java/com/todomvc/client/ToDoCell.java.html">ToDoCell.java</a></div><div class="source-file-link"><a href="../../../../../java/com/todomvc/client/ToDoGinModule.java.html">ToDoGinModule.java</a></div><div class="source-file-link"><a href="../../../../../java/com/todomvc/client/ToDoPresenter.java.html">ToDoPresenter.java</a></div><div class="source-file-link"><a href="../../../../../java/com/todomvc/client/ToDoView.java.html">ToDoView.java</a></div><div class="source-file-link"><a href="../../../../../java/com/todomvc/client/View.java.html">View.java</a></div></nav><div class="nav-header">client.command</div><nav><div class="source-file-link"><a href="../../../../../java/com/todomvc/client/command/ClientCommandExecutor.java.html">ClientCommandExecutor.java</a></div><div class="source-file-link"><a href="../../../../../java/com/todomvc/client/command/CommandController.java.html">CommandController.java</a></div></nav><div class="nav-header">client.command.todo</div><nav><div class="source-file-link"><a href="../../../../../java/com/todomvc/client/command/todo/ClientToDoCommandExecutor.java.html">ClientToDoCommandExecutor.java</a></div><div class="source-file-link"><a href="../../../../../java/com/todomvc/client/command/todo/ClientToDoListCommandExecutor.java.html">ClientToDoListCommandExecutor.java</a></div></nav><div class="nav-header">client.events</div><nav><div class="source-file-link"><a href="../../../../../java/com/todomvc/client/events/AddOrRemoveEvent.java.html">AddOrRemoveEvent.java</a></div><div class="source-file-link"><a href="../../../../../java/com/todomvc/client/events/ToDoListAddOrRemoveEvent.java.html">ToDoListAddOrRemoveEvent.java</a></div><div class="source-file-link"><a href="../../../../../java/com/todomvc/client/events/ToDoListUpdatedEvent.java.html">ToDoListUpdatedEvent.java</a></div><div class="source-file-link"><a href="../../../../../java/com/todomvc/client/events/ToDoUpdatedEvent.java.html">ToDoUpdatedEvent.java</a></div></nav><div class="nav-header">server</div><nav><div class="source-file-link"><a href="../../../../../java/com/todomvc/server/GwtRpcSerializer.java.html">GwtRpcSerializer.java</a></div><div class="source-file-link"><a href="../../../../../java/com/todomvc/server/ToDoServerInjector.java.html">ToDoServerInjector.java</a></div><div class="source-file-link"><a href="../../../../../java/com/todomvc/server/ToDoServerModule.java.html">ToDoServerModule.java</a></div></nav><div class="nav-header">server.command</div><nav><div class="source-file-link"><a href="../../../../../java/com/todomvc/server/command/CommandSerializer.java.html">CommandSerializer.java</a></div><div class="source-file-link"><a href="../../../../../java/com/todomvc/server/command/ServerCommandExecutor.java.html">ServerCommandExecutor.java</a></div></nav><div class="nav-header">server.command.todo</div><nav><div class="source-file-link"><a href="../../../../../java/com/todomvc/server/command/todo/ServerToDoCommandExecutor.java.html">ServerToDoCommandExecutor.java</a></div><div class="source-file-link"><a href="../../../../../java/com/todomvc/server/command/todo/ServerToDoListCommandExecutor.java.html">ServerToDoListCommandExecutor.java</a></div></nav><div class="nav-header">server.service</div><nav><div class="source-file-link"><a href="../../../../../java/com/todomvc/server/service/CommandServiceImpl.java.html">CommandServiceImpl.java</a></div><div class="source-file-link"><a href="../../../../../java/com/todomvc/server/service/ToDoServiceImpl.java.html">ToDoServiceImpl.java</a></div></nav><div class="nav-header">server.servlet</div><nav><div class="source-file-link"><a href="../../../../../java/com/todomvc/server/servlet/ChannelConnectionsHandler.java.html">ChannelConnectionsHandler.java</a></div></nav><div class="nav-header">shared.command</div><nav><div class="source-file-link"><a href="../../../../../java/com/todomvc/shared/command/BaseCommand.java.html">BaseCommand.java</a></div><div class="source-file-link"><a href="../../../../../java/com/todomvc/shared/command/BulkSetterCommand.java.html">BulkSetterCommand.java</a></div><div class="source-file-link"><a href="../../../../../java/com/todomvc/shared/command/Command.java.html">Command.java</a></div><div class="source-file-link"><a href="../../../../../java/com/todomvc/shared/command/CommandExecutor.java.html">CommandExecutor.java</a></div><div class="source-file-link"><a href="../../../../../java/com/todomvc/shared/command/CommandSerialization.java.html">CommandSerialization.java</a></div><div class="source-file-link"><a href="../../../../../java/com/todomvc/shared/command/SetterCommand.java.html">SetterCommand.java</a></div></nav><div class="nav-header">shared.command.todo</div><nav><div class="source-file-link"><a href="../../../../../java/com/todomvc/shared/command/todo/AddOrRemoveToDoCommand.java.html">AddOrRemoveToDoCommand.java</a></div><div class="source-file-link"><a href="../../../../../java/com/todomvc/shared/command/todo/RemoveCompletedToDoListCommand.java.html">RemoveCompletedToDoListCommand.java</a></div><div class="source-file-link"><a href="../../../../../java/com/todomvc/shared/command/todo/SetCompletedToDoCommand.java.html">SetCompletedToDoCommand.java</a></div><div class="source-file-link"><a href="../../../../../java/com/todomvc/shared/command/todo/SetCompletedToDoListCommand.java.html">SetCompletedToDoListCommand.java</a></div><div class="source-file-link"><a href="../../../../../java/com/todomvc/shared/command/todo/SetTitleToDoCommand.java.html">SetTitleToDoCommand.java</a></div><div class="source-file-link"><a href="../../../../../java/com/todomvc/shared/command/todo/ToDoCommandExecutor.java.html">ToDoCommandExecutor.java</a></div><div class="source-file-link"><a href="../../../../../java/com/todomvc/shared/command/todo/ToDoListCommandExecutor.java.html">ToDoListCommandExecutor.java</a></div></nav><div class="nav-header">shared.model</div><nav><div class="source-file-link"><a href="../../../../../java/com/todomvc/shared/model/HasID.java.html">HasID.java</a></div><div class="source-file-link"><a href="../../../../../java/com/todomvc/shared/model/IdentifiableCollection.java.html">IdentifiableCollection.java</a></div><div class="source-file-link"><a href="../../../../../java/com/todomvc/shared/model/ToDo.java.html">ToDo.java</a></div></nav><div class="nav-header">shared.service</div><nav><div class="source-file-link"><a href="../../../../../java/com/todomvc/shared/service/CommandService.java.html">CommandService.java</a></div><div class="source-file-link"><a href="../../../../../java/com/todomvc/shared/service/ToDoService.java.html">ToDoService.java</a></div></nav></ul></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Theme <b class="caret"></b></a><ul id="themeDropdown" class="dropdown-menu"></ul></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Layout <b class="caret"></b></a><ul class="dropdown-menu"><li class="active"><a href="#">Horizontal</a></li><li><a href="../../../../../../vertical/java\com\todomvc\client\command\CommandController.java.html">Vertical</a></li></ul></li></ul></div><!--/.nav-collapse --></div></div></div><div class="container-fluid docco-container"><div id="section-0" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-0">0</a></span><div class="doctext hidden-doc"></div></div><div class="span6 code"><div class="hidden-code-line">------------------<a href="javascript:void(0)" class="hidden-code-toggle" index="0">Show Code (<span class="linecount"></span> lines)</a>------------------</div><pre class="hidden-code"><code class="java">package com.todomvc.client.command;
+
+import static com.google.common.base.Preconditions.checkNotNull;
+
+import java.util.logging.Logger;
+
+import com.google.common.annotations.VisibleForTesting;
+import com.google.gwt.appengine.channel.client.Channel;
+import com.google.gwt.appengine.channel.client.ChannelError;
+import com.google.gwt.appengine.channel.client.ChannelFactory;
+import com.google.gwt.appengine.channel.client.SocketListener;
+import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.inject.Inject;
+import com.todomvc.client.util.UUID;
+import com.todomvc.shared.command.Command;
+import com.todomvc.shared.command.CommandSerialization;
+import com.todomvc.shared.command.CommandSerialization.CommandDeserializer;
+import com.todomvc.shared.service.CommandServiceAsync;</code></pre></div></div><div id="section-1" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-1">1</a></span><div class="doctext"><p>Coordinates command execution activity on the browser.</p>
+<ul>
+  <li>Registers client with server</li>
+  <li>Sends and receives Command's to and from server</li>
+</ul></div></div><div class="span6 code"><pre><code class="java">public class CommandController {
+
+    private static Logger logger = Logger.getLogger(CommandController.class.getName());</code></pre></div></div><div id="section-2" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-2">2</a></span><div class="doctext"><p>Check this key piece:  <a href="../../../../../java/com/todomvc/shared/service/CommandService.java.html">CommandService</a>.</p></div></div><div class="span6 code"><pre><code class="java">    private final CommandServiceAsync commandService;
+    private final ChannelFactory channelFactory;
+    private final ClientCommandExecutor executor;
+    private final CommandDeserializer deserializer;
+    private final java.util.Random random;
+    private final String clientId;
+    private SocketListener socketListener;
+
+    @Inject
+    public CommandController(CommandServiceAsync commandService, ChannelFactory channelFactory,
+            ClientCommandExecutor executor, CommandDeserializer deserializer) {
+        this.commandService = checkNotNull(commandService);
+        this.channelFactory = checkNotNull(channelFactory);
+        this.executor = checkNotNull(executor);
+        this.deserializer = checkNotNull(deserializer);
+        random = new java.util.Random();
+        clientId = createUniqueClientId();
+    } </code></pre></div></div><div id="section-3" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-3">3</a></span><div class="doctext"><p>Registers client to edit a particular object.  On success, client have established a Channel API channel with the server  and can send and receive edit commands for the given object.</p></div></div><div class="span6 code"><pre><code class="java">    public void openCommandChannel(final String objectId) {
+        commandService.openChannel(objectId, clientId, new AsyncCallback&lt;String&gt;() {
+
+            @Override
+            public void onFailure(Throwable caught) {
+                logger.severe(&quot;cannot open command channel for object &quot; + objectId);
+            }
+
+            @Override
+            public void onSuccess(String token) {
+                logger.info(&quot;opening channel for token: &quot; + token);
+                Channel channel = channelFactory.createChannel(token);
+                socketListener = new CommandChannelListener();
+                channel.open(socketListener);
+            }
+
+        });
+    }
+
+    @VisibleForTesting
+    SocketListener getSocketListener() {
+        return socketListener;
+    }</code></pre></div></div><div id="section-4" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-4">4</a></span><div class="doctext"><p>Listener for commands received from the server through the Channel API. </p></div></div><div class="span6 code"><pre><code class="java">    private class CommandChannelListener implements SocketListener {
+
+        @Override
+        public void onOpen() {
+            logger.info(&quot;channel open&quot;);
+        }</code></pre></div></div><div id="section-5" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-5">5</a></span><div class="doctext"><p>Execute the commands received regardless of whether they  are eager or not. Eagerness must be obeyed by originating client, not by  listener clients.</p></div></div><div class="span6 code"><pre><code class="java">        @Override
+        public void onMessage(String message) {
+            try {
+                Command&lt;?&gt; command = deserializer.read(message);
+                logger.fine(&quot;received command: &quot; + command);
+                executor.execute(command);
+            } catch (CommandSerialization.SerializationException e) {
+                logger.severe(&quot;unable to de-serialize message: &quot; + message);
+            }
+        }
+
+        @Override
+        public void onError(ChannelError error) {
+            logger.severe(&quot;channel error: &quot; + error.getCode() + &quot; : &quot; + error.getDescription());
+        }
+
+        @Override
+        public void onClose() {
+            logger.severe(&quot;channel closed: will not receive further commands from the server&quot;);
+        }
+    }</code></pre></div></div><div id="section-6" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-6">6</a></span><div class="doctext"><p>Executes command on the client eagerly, and then sends the command to the server  to execute in the future.</p></div></div><div class="span6 code"><pre><code class="java">    public void executeCommand(Command&lt;?&gt; command) {
+        if (command.isEager()) {
+            executeCommandOnClient(command);
+        }
+        sendCommandToServer(command);
+    }
+
+    private void executeCommandOnClient(Command&lt;?&gt; command) {
+        executor.execute(command);
+    }
+
+    private void sendCommandToServer(final Command&lt;?&gt; command) {
+        commandService.executeCommand(command, clientId, new AsyncCallback&lt;Command&lt;?&gt;&gt;() {
+
+            @Override
+            public void onFailure(Throwable caught) {
+                logger.severe(&quot;error sending command to server: &quot; + caught.getLocalizedMessage());
+            }
+
+            @Override
+            public void onSuccess(Command&lt;?&gt; updateCommand) {</code></pre></div></div><div id="section-7" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-7">7</a></span><div class="doctext"><p>If non-eager command, execute the update command sent back by the server. </p></div></div><div class="span6 code"><pre><code class="java">                if (!command.isEager()) {
+                    executor.execute(updateCommand);
+                }
+            }
+        });
+    }</code></pre></div></div><div id="section-8" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-8">8</a></span><div class="doctext"><p>Creates a unique client ID suitable for AppEngine's  <a href="https://developers.google.com/appengine/docs/java/javadoc/com/google/appengine/api/channel/ChannelService">ChannelService.createChannel</a>  method.</p><p>The client ID is expected to be unique among all of the clients connected to the server, and will always be  fewer than 64 bytes when encoded to UTF-8.</p><p><code>UUID.uuid()</code> generates a RFC4122, version 4 ID. For example <code>92329D39-6F5C-4520-ABFC-AAB64544E172</code>.</p></div></div><div class="span6 code"><pre><code class="java">    private String createUniqueClientId() {
+        return UUID.uuid() + &quot;:&quot; + random.nextInt(Integer.MAX_VALUE) + &quot;:&quot; + System.currentTimeMillis();
+    }
+}</code></pre></div></div></div><div id="grabber"></div></body></html>

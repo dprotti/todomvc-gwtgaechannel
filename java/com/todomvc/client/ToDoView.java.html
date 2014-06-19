@@ -1,0 +1,188 @@
+<!DOCTYPE html><html><head><meta http-equiv="content-type" content="text/html;charset=utf-8"><title>ToDoView.java</title><link href="../../../../css/bootstrap.min.css" rel="stylesheet" type="text/css"/><link href="../../../../css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/><link href="../../../../css/atlassian-docco.css" rel="stylesheet" type="text/css"/><link href="../../../../gwttodo.css" rel="stylesheet" type="text/css"/><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="alternate stylesheet" class="codebrush light" title="IDEA" href="http://yandex.st/highlightjs/6.2/styles/idea.min.css"/><link rel="alternate stylesheet" class="codebrush light" title="Google Code" href="http://yandex.st/highlightjs/6.2/styles/googlecode.min.css"/><link rel="alternate stylesheet" class="codebrush light" title="GitHub" href="http://yandex.st/highlightjs/6.2/styles/github.min.css"/><link rel="alternate stylesheet" class="codebrush light" title="Visual Studio" href="http://yandex.st/highlightjs/6.2/styles/vs.min.css"/><link rel="alternate stylesheet" class="codebrush light" title="Magula" href="http://yandex.st/highlightjs/6.2/styles/magula.min.css"/><link rel="stylesheet" class="codebrush dark" title="Zenburn" href="http://yandex.st/highlightjs/6.2/styles/zenburn.min.css"/><link rel="alternate stylesheet" class="codebrush dark" title="Arta" href="http://yandex.st/highlightjs/6.2/styles/arta.min.css"/><link rel="alternate stylesheet" class="codebrush dark" title="Monokai" href="http://yandex.st/highlightjs/6.2/styles/monokai.min.css"/><link rel="alternate stylesheet" class="codebrush dark" title="IR Black" href="http://yandex.st/highlightjs/6.2/styles/ir_black.min.css"/><link rel="alternate stylesheet" class="codebrush dark" title="Solarized Dark" href="http://yandex.st/highlightjs/6.2/styles/solarized_dark.min.css"/><script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script><script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script><script type="text/javascript" src="http://yandex.st/highlightjs/6.2/highlight.min.js"></script><script type="text/javascript" src="../../../../js/jquery.cookie.js"></script><script type="text/javascript" src="../../../../js/bootstrap.min.js"></script><!-- Use our own attlassian-docco.js file to set Zenburn as default theme --><script type="text/javascript" src="../../../../gwttodo-atlassian-docco.js"></script></head><body><div class="navbar navbar-fixed-top"><div class="navbar-inner"><div class="container-fluid"><a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><div class="brand"><a href=../../../../index.html>GWT+GAE TodoMVC</a><span class="source-filename">ToDoView.java</span></div><div class="nav-collapse"><ul class="nav"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Index <b class="caret"></b></a><ul class="dropdown-menu"><div class="nav-header">client</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/client/command/CommandDeserializerImpl.java.html">CommandDeserializerImpl.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/ModelCache.java.html">ModelCache.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/Presenter.java.html">Presenter.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/ToDoCell.java.html">ToDoCell.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/ToDoGinModule.java.html">ToDoGinModule.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/ToDoPresenter.java.html">ToDoPresenter.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/ToDoView.java.html">ToDoView.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/View.java.html">View.java</a></div></nav><div class="nav-header">client.command</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/client/command/ClientCommandExecutor.java.html">ClientCommandExecutor.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/command/CommandController.java.html">CommandController.java</a></div></nav><div class="nav-header">client.command.todo</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/client/command/todo/ClientToDoCommandExecutor.java.html">ClientToDoCommandExecutor.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/command/todo/ClientToDoListCommandExecutor.java.html">ClientToDoListCommandExecutor.java</a></div></nav><div class="nav-header">client.events</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/client/events/AddOrRemoveEvent.java.html">AddOrRemoveEvent.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/events/ToDoListAddOrRemoveEvent.java.html">ToDoListAddOrRemoveEvent.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/events/ToDoListUpdatedEvent.java.html">ToDoListUpdatedEvent.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/client/events/ToDoUpdatedEvent.java.html">ToDoUpdatedEvent.java</a></div></nav><div class="nav-header">server</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/server/GwtRpcSerializer.java.html">GwtRpcSerializer.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/server/ToDoServerInjector.java.html">ToDoServerInjector.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/server/ToDoServerModule.java.html">ToDoServerModule.java</a></div></nav><div class="nav-header">server.command</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/server/command/CommandSerializer.java.html">CommandSerializer.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/server/command/ServerCommandExecutor.java.html">ServerCommandExecutor.java</a></div></nav><div class="nav-header">server.command.todo</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/server/command/todo/ServerToDoCommandExecutor.java.html">ServerToDoCommandExecutor.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/server/command/todo/ServerToDoListCommandExecutor.java.html">ServerToDoListCommandExecutor.java</a></div></nav><div class="nav-header">server.service</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/server/service/CommandServiceImpl.java.html">CommandServiceImpl.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/server/service/ToDoServiceImpl.java.html">ToDoServiceImpl.java</a></div></nav><div class="nav-header">server.servlet</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/server/servlet/ChannelConnectionsHandler.java.html">ChannelConnectionsHandler.java</a></div></nav><div class="nav-header">shared.command</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/BaseCommand.java.html">BaseCommand.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/BulkSetterCommand.java.html">BulkSetterCommand.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/Command.java.html">Command.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/CommandExecutor.java.html">CommandExecutor.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/CommandSerialization.java.html">CommandSerialization.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/SetterCommand.java.html">SetterCommand.java</a></div></nav><div class="nav-header">shared.command.todo</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/todo/AddOrRemoveToDoCommand.java.html">AddOrRemoveToDoCommand.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/todo/RemoveCompletedToDoListCommand.java.html">RemoveCompletedToDoListCommand.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/todo/SetCompletedToDoCommand.java.html">SetCompletedToDoCommand.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/todo/SetCompletedToDoListCommand.java.html">SetCompletedToDoListCommand.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/todo/SetTitleToDoCommand.java.html">SetTitleToDoCommand.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/todo/ToDoCommandExecutor.java.html">ToDoCommandExecutor.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/command/todo/ToDoListCommandExecutor.java.html">ToDoListCommandExecutor.java</a></div></nav><div class="nav-header">shared.model</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/model/HasID.java.html">HasID.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/model/IdentifiableCollection.java.html">IdentifiableCollection.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/model/ToDo.java.html">ToDo.java</a></div></nav><div class="nav-header">shared.service</div><nav><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/service/CommandService.java.html">CommandService.java</a></div><div class="source-file-link"><a href="../../../../java/com/todomvc/shared/service/ToDoService.java.html">ToDoService.java</a></div></nav></ul></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Theme <b class="caret"></b></a><ul id="themeDropdown" class="dropdown-menu"></ul></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Layout <b class="caret"></b></a><ul class="dropdown-menu"><li class="active"><a href="#">Horizontal</a></li><li><a href="../../../../../vertical/java\com\todomvc\client\ToDoView.java.html">Vertical</a></li></ul></li></ul></div><!--/.nav-collapse --></div></div></div><div class="container-fluid docco-container"><div id="section-0" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-0">0</a></span><div class="doctext hidden-doc"></div></div><div class="span6 code"><div class="hidden-code-line">------------------<a href="javascript:void(0)" class="hidden-code-toggle" index="0">Show Code (<span class="linecount"></span> lines)</a>------------------</div><pre class="hidden-code"><code class="java">package com.todomvc.client;
+
+import static com.google.common.base.Preconditions.checkNotNull;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
+import com.google.gwt.core.client.GWT;
+import com.google.gwt.dom.client.Element;
+import com.google.gwt.dom.client.InputElement;
+import com.google.gwt.dom.client.SpanElement;
+import com.google.gwt.dom.client.Style.Display;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.event.dom.client.KeyCodes;
+import com.google.gwt.event.dom.client.KeyUpEvent;
+import com.google.gwt.event.dom.client.KeyUpHandler;
+import com.google.gwt.uibinder.client.UiBinder;
+import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.cellview.client.CellList;
+import com.google.gwt.user.cellview.client.HasKeyboardSelectionPolicy.KeyboardSelectionPolicy;
+import com.google.gwt.user.client.DOM;
+import com.google.gwt.user.client.Event;
+import com.google.gwt.user.client.EventListener;
+import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.Composite;
+import com.google.gwt.user.client.ui.Hyperlink;
+import com.google.gwt.user.client.ui.Widget;
+import com.google.gwt.view.client.ListDataProvider;
+import com.todomvc.client.command.CommandController;
+import com.todomvc.client.util.ErrorDialog;
+import com.todomvc.shared.model.ToDo;</code></pre></div></div><div id="section-1" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-1">1</a></span><div class="doctext"><p>A view for the <code>ToDoPresenter</code>. </p></div></div><div class="span6 code"><pre><code class="java">public class ToDoView extends Composite implements ToDoPresenter.Display {
+
+    private static ToDoViewUiBinder uiBinder = GWT.create(ToDoViewUiBinder.class);
+
+    interface ToDoViewUiBinder extends UiBinder&lt;Widget, ToDoView&gt; {
+    }</code></pre></div></div><div id="section-2" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-2">2</a></span><div class="doctext hidden-doc"></div></div><div class="span6 code"><div class="hidden-code-line">------------------<a href="javascript:void(0)" class="hidden-code-toggle" index="2">Show  UiBinder fields  Code (<span class="linecount"></span> lines)</a>------------------</div><pre class="hidden-code"><code class="java">    @UiField
+    Hyperlink routingAll;
+
+    @UiField
+    Hyperlink routingActive;
+
+    @UiField
+    Hyperlink routingCompleted;
+
+    @UiField
+    TextBoxWithPlaceholder taskText;
+
+    @UiField
+    Element remainingTasksCount;
+
+    @UiField
+    SpanElement remainingTasksLabel;
+
+    @UiField
+    Element mainSection;
+
+    @UiField
+    Element todoStatsContainer;
+
+    @UiField
+    SpanElement clearTasksCount;
+
+    @UiField
+    Button clearCompleted;
+
+    @UiField
+    InputElement toggleAll;
+
+    @UiField(provided = true)
+    CellList&lt;ToDo&gt; todoTable;</code></pre></div></div><div id="section-3" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-3">3</a></span><div class="doctext"><p>Calling <code>add</code>, <code>remove</code> or <code>set(int, Object)</code> in the list wrapped by a  <a href="http://www.gwtproject.org/javadoc/latest/com/google/gwt/view/client/ListDataProvider.html">ListDataProvider</a>  causes any associated Cell widget to re-render. See <code>addDataDisplay()</code> call below.</p></div></div><div class="span6 code"><pre><code class="java">    private final ListDataProvider&lt;ToDo&gt; displayedToDos;
+    private final ToDoPresenter presenter;
+
+    @Inject
+    public ToDoView(ToDoPresenter presenter, CommandController commandController) {
+        this.presenter = checkNotNull(presenter);
+        checkNotNull(commandController);
+        displayedToDos = new ListDataProvider&lt;ToDo&gt;();
+        todoTable = new CellList&lt;ToDo&gt;(new ToDoCell(presenter, commandController));</code></pre></div></div><div id="section-4" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-4">4</a></span><div class="doctext"><p>Changes to <code>displayedToDos</code> list will be automatically rendered by the cells in  <code>todoTable</code>.</p></div></div><div class="span6 code"><pre><code class="java">        displayedToDos.addDataDisplay(todoTable);
+
+        initWidget(uiBinder.createAndBindUi(this));</code></pre></div></div><div id="section-5" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-5">5</a></span><div class="doctext"><p>Removes the yellow highlight. </p></div></div><div class="span6 code"><pre><code class="java">        todoTable.setKeyboardSelectionPolicy(KeyboardSelectionPolicy.DISABLED);</code></pre></div></div><div id="section-6" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-6">6</a></span><div class="doctext"><p>Add IDs to the elements that have ui:field attributes. This is required because the  UiBinder does not permit the addition of ID attributes to elements marked with ui:field.</p></div></div><div class="span6 code"><pre><code class="java">        mainSection.setId(&quot;main&quot;);
+        clearCompleted.getElement().setId(&quot;clear-completed&quot;);
+        taskText.getElement().setId(&quot;new-todo&quot;);
+        todoStatsContainer.setId(&quot;footer&quot;);
+        toggleAll.setId(&quot;toggle-all&quot;);
+
+        this.presenter.bindView(this);
+    }
+
+    @Override
+    public ToDoPresenter getPresenter() {
+        return presenter;
+    }
+
+    @Override
+    public String getTaskText() {
+        return taskText.getText();
+    }</code></pre></div></div><div id="section-7" class="row-fluid docco-section"><div class="span6 doc"><span class="label label-info"><a style="color:white" href="#section-7">7</a></span><div class="doctext"><p>Wire-up the events from the UI to the presenter. </p></div></div><div class="span6 code"><pre><code class="java">    @Override
+    public void addhandler(final ToDoPresenter.Display.EventHandler handler) {
+
+        // The TodoMVC project template has a markup / style that is not compatible with the markup
+        // generated by the GWT CheckBox control. For this reason, here we are using an InputElement
+        // directly. As a result, we handle low-level DOM events rather than the GWT higher level
+        // abstractions, e.g. ClickHandlers. A typical GWT application would not do this, however,
+        // this nicely illustrates how you can develop GWT applications
+        // that program directly against the DOM.
+        final com.google.gwt.dom.client.Element clientToggleElement = toggleAll.cast();
+        DOM.sinkEvents(clientToggleElement, Event.ONCLICK);
+        DOM.setEventListener(clientToggleElement, new EventListener() {
+            @Override
+            public void onBrowserEvent(Event event) {
+                handler.markAllCompleted(toggleAll.isChecked());
+            }
+        });
+
+        taskText.addKeyUpHandler(new KeyUpHandler() {
+            @Override
+            public void onKeyUp(KeyUpEvent event) {
+                if (event.getNativeKeyCode() == KeyCodes.KEY_ENTER) {
+                    handler.addTask();
+                }
+            }
+        });
+
+        clearCompleted.addClickHandler(new ClickHandler() {
+            @Override
+            public void onClick(ClickEvent event) {
+                handler.clearCompletedTasks();
+            }
+        });
+    }
+
+    @Override
+    public List&lt;ToDo&gt; getDisplayedToDos() {
+        return displayedToDos.getList();
+    }
+
+    @Override
+    public void clearTaskText() {
+        taskText.setText(&quot;&quot;);
+    }
+
+    @Override
+    public void setTaskStatistics(int totalTasks, int completedTasks) {
+        int remainingTasks = totalTasks - completedTasks;
+
+        displayOrHide(mainSection, totalTasks);
+        displayOrHide(todoStatsContainer, totalTasks);
+        displayOrHide(clearCompleted.getElement(), completedTasks);
+
+        remainingTasksCount.setInnerText(Integer.toString(remainingTasks));
+        remainingTasksLabel.setInnerText(remainingTasks &gt; 1 || remainingTasks == 0 ? &quot;items&quot; : &quot;item&quot;);
+        clearTasksCount.setInnerHTML(Integer.toString(completedTasks));
+
+        toggleAll.setChecked(totalTasks == completedTasks);
+    }
+
+    @Override
+    public void setRouting(ToDoRouting routing) {
+        selectRoutingHyperlink(routingAll, ToDoRouting.ALL, routing);
+        selectRoutingHyperlink(routingActive, ToDoRouting.ACTIVE, routing);
+        selectRoutingHyperlink(routingCompleted, ToDoRouting.COMPLETED, routing);
+    }
+
+    private void selectRoutingHyperlink(Hyperlink hyperlink, ToDoRouting currentRoutingState,
+        ToDoRouting routingStateToMatch) {
+        if (currentRoutingState == routingStateToMatch) {
+            hyperlink.getElement().addClassName(&quot;selected&quot;);
+        } else {
+            hyperlink.getElement().removeClassName(&quot;selected&quot;);
+        }
+    }
+
+    @Override
+    public void showError(String message) {
+        ErrorDialog errorDialog = new ErrorDialog(message);
+        errorDialog.show();
+    }
+
+    private void displayOrHide(Element element, int count) {
+        if (count == 0) {
+            element.getStyle().setDisplay(Display.NONE);
+        } else {
+            element.getStyle().setDisplay(Display.BLOCK);
+        }
+    }
+}</code></pre></div></div></div><div id="grabber"></div></body></html>

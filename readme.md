@@ -1,6 +1,8 @@
 
 # Google Web Toolkit TodoMVC with Real Time Collab
 
+**UNFORTUNATELY THE LIVE DEMO IS NOT CURRENTLY WORKING AFTER GOOGLE RETIRED ITS CHANNEL API SERVICE IN OCT. 31 2017**
+
 This is [TodoMVC](http://todomvc.com) app supporting real-time collaboration.
 When a user adds, modifies or removes a task, the change is reflected in real-time in all other browsers.
 
